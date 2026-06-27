@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darsh Desai | Engineering Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles for smooth scrolling and animations */
+        html { scroll-behavior: smooth; }
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-white text-stone-800 font-sans antialiased">
+
+    <!-- Portfolio Header Section -->
+    <section id="portfolio" class="py-12 md:py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Hero / About Me Header -->
+            <div class="text-center mb-12 fade-in">
+                <div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 border border-emerald-200 px-4 py-1.5 rounded-full text-xs md:text-sm font-bold uppercase tracking-wider mb-3">
+                    <i data-lucide="cpu" class="w-4 h-4"></i> Welcome to My Lab
+                </div>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-stone-900 mb-3 md:mb-4">Darsh Desai</h1>
+                <p class="text-emerald-700 font-semibold tracking-wider text-sm md:text-base uppercase mb-3">Mechanical Engineering Student | Portsmouth, UK</p>
+                <div class="w-20 h-1.5 bg-emerald-600 mx-auto rounded-full mb-6"></div>
+                
+                <!-- Who Am I Card -->
+                <div class="max-w-3xl mx-auto bg-white border border-stone-200 shadow-sm rounded-3xl p-6 md:p-8 text-left mb-12 backdrop-blur-sm">
+                    <h2 class="text-lg md:text-xl font-bold text-stone-900 mb-3 flex items-center gap-2">
+                        <i data-lucide="user" class="text-emerald-600"></i> Who Am I?
+                    </h2>
+                    <p class="text-stone-600 text-sm md:text-base leading-relaxed mb-4">
+                        I am a second-year Mechanical Engineering student at the University of Portsmouth with an interest in full-cycle system design, spanning concept development, modelling, design for manufacture, and system integration.
+                    </p>
+                    <p class="text-stone-600 text-sm md:text-base leading-relaxed">
+                        I have worked on multiple projects involving each stage of the manufacturing process, including material selection, design validation, prototyping, testing, and production preparation. This has developed my ability to translate theoretical designs into physical systems through iterative improvement under practical constraints.
+                    </p>
+                </div>
+                
+                <h2 class="text-2xl md:text-3xl font-extrabold text-stone-900 mb-2">Featured Projects</h2>
+                <p class="text-stone-600 max-w-xl mx-auto text-xs md:text-sm">
+                    Tap on any project card below to view my technical breakdowns, structural calculations, and prototyping blueprints!
+                </p>
+            </div>
+
+            <!-- Project Grid (5 actual projects from your resume) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 fade-in">
+                
+                <!-- Project Card 1: Mars Rover Replica -->
+                <div onclick="openProject('rover')" class="group cursor-pointer bg-white rounded-3xl p-6 border border-stone-200 shadow-sm hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-900/5 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between min-h-[340px]">
+                    <div>
+                        <div class="w-full aspect-[4/3] bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 text-emerald-600 group-hover:bg-emerald-100/70 transition-colors">
+                            <i data-lucide="bot" class="w-16 h-16"></i>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">Robotics & Space Systems</span>
+                        <h3 class="text-xl font-extrabold text-stone-900 mt-3 group-hover:text-emerald-600 transition-colors">Mars Rover Replica</h3>
+                        <p class="text-stone-500 text-sm mt-2 line-clamp-2">Led assembly and prototyping of a client-specified programmable rover chassis, optimizing design for 3D printing and load limits.</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-6 pt-4 border-t border-stone-100">
+                        <span class="text-stone-500 text-xs flex items-center gap-1"><i data-lucide="info" class="w-3.5 h-3.5 text-emerald-600"></i> Assembly Complete</span>
+                        <span class="text-emerald-600 font-bold text-sm flex items-center gap-1">View Project <i data-lucide="chevron-right" class="w-4 h-4"></i></span>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: RRT Path Planning Program -->
+                <div onclick="openProject('rrt')" class="group cursor-pointer bg-white rounded-3xl p-6 border border-stone-200 shadow-sm hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-900/5 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between min-h-[340px]">
+                    <div>
+                        <div class="w-full aspect-[4/3] bg-emerald-50/70 rounded-2xl flex items-center justify-center mb-6 text-emerald-600 group-hover:bg-emerald-100/70 transition-colors">
+                            <i data-lucide="navigation" class="w-16 h-16"></i>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">Autonomous Programming</span>
+                        <h3 class="text-xl font-extrabold text-stone-900 mt-3 group-hover:text-emerald-600 transition-colors">RRT Path Planning Program</h3>
+                        <p class="text-stone-500 text-sm mt-2 line-clamp-2">A MATLAB system that generates optimal trajectories across maps using rapid random trees, greedy shortcutting, and splines.</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-6 pt-4 border-t border-stone-100">
+                        <span class="text-stone-500 text-xs flex items-center gap-1"><i data-lucide="cpu" class="w-3.5 h-3.5 text-emerald-600"></i> MATLAB</span>
+                        <span class="text-emerald-600 font-bold text-sm flex items-center gap-1">View Project <i data-lucide="chevron-right" class="w-4 h-4"></i></span>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Stress Analysis Application -->
+                <div onclick="openProject('stress')" class="group cursor-pointer bg-white rounded-3xl p-6 border border-stone-200 shadow-sm hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-900/5 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between min-h-[340px]">
+                    <div>
+                        <div class="w-full aspect-[4/3] bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 text-emerald-600 group-hover:bg-emerald-100/70 transition-colors">
+                            <i data-lucide="activity" class="w-16 h-16"></i>
+                        </div>
+                        <div class="flex items-center justify-between mt-1">
+                            <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">Structural Math</span>
+                            <span class="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded border border-emerald-200">First Class (100%)</span>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-stone-900 mt-3 group-hover:text-emerald-600 transition-colors">Stress Analysis App</h3>
+                        <p class="text-stone-500 text-sm mt-2 line-clamp-2">Built an automated calculation software in MATLAB App Designer to calculate and graph shear and bending limits for bridge beams.</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-6 pt-4 border-t border-stone-100">
+                        <span class="text-stone-500 text-xs flex items-center gap-1"><i data-lucide="sliders" class="w-3.5 h-3.5 text-emerald-600"></i> Simulation App</span>
+                        <span class="text-emerald-600 font-bold text-sm flex items-center gap-1">View Project <i data-lucide="chevron-right" class="w-4 h-4"></i></span>
+                    </div>
+                </div>
+
+                <!-- Project Card 4: Injection-Moulded Bowl -->
+                <div onclick="openProject('mould')" class="group cursor-pointer bg-white rounded-3xl p-6 border border-stone-200 shadow-sm hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-900/5 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between min-h-[340px]">
+                    <div>
+                        <div class="w-full aspect-[4/3] bg-emerald-50/70 rounded-2xl flex items-center justify-center mb-6 text-emerald-600 group-hover:bg-emerald-100/70 transition-colors">
+                            <i data-lucide="package" class="w-16 h-16"></i>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">Design for Manufacture</span>
+                        <h3 class="text-xl font-extrabold text-stone-900 mt-3 group-hover:text-emerald-600 transition-colors">Injection-Moulded Dog Bowl</h3>
+                        <p class="text-stone-500 text-sm mt-2 line-clamp-2">Designed commercial tooling inside Creo Parametric using strict draft assessments, thermals, and CAM milling files.</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-6 pt-4 border-t border-stone-100">
+                        <span class="text-stone-500 text-xs flex items-center gap-1"><i data-lucide="tool" class="w-3.5 h-3.5 text-emerald-600"></i> Creo & CAM</span>
+                        <span class="text-emerald-600 font-bold text-sm flex items-center gap-1">View Project <i data-lucide="chevron-right" class="w-4 h-4"></i></span>
+                    </div>
+                </div>
+
+                <!-- Project Card 5: Modular Backpack Concept -->
+                <div onclick="openProject('backpack')" class="group cursor-pointer bg-white rounded-3xl p-6 border border-stone-200 shadow-sm hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-900/5 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between min-h-[340px]">
+                    <div>
+                        <div class="w-full aspect-[4/3] bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 text-emerald-600 group-hover:bg-emerald-100/70 transition-colors">
+                            <i data-lucide="briefcase" class="w-16 h-16"></i>
+                        </div>
+                        <div class="flex items-center justify-between mt-1">
+                            <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">Product Design</span>
+                            <span class="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded border border-emerald-200">First Class (82%)</span>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-stone-900 mt-3 group-hover:text-emerald-600 transition-colors">Modular Backpack System</h3>
+                        <p class="text-stone-500 text-sm mt-2 line-clamp-2">Collaborative CAD creation in Fusion 360 of a rail-based interlocking frame accommodating swappable utility pockets.</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-6 pt-4 border-t border-stone-100">
+                        <span class="text-stone-500 text-xs flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5 text-emerald-600"></i> Team of 4</span>
+                        <span class="text-emerald-600 font-bold text-sm flex items-center gap-1">View Project <i data-lucide="chevron-right" class="w-4 h-4"></i></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Project Details Modal Window -->
+    <div id="project-modal" class="fixed inset-0 bg-stone-900/40 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300 backdrop-blur-sm">
+        <div class="bg-white rounded-[2rem] shadow-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto border border-stone-200 p-6 md:p-8 relative transform scale-95 transition-all duration-300" id="modal-container">
+            <!-- Close Button -->
+            <button onclick="closeProject()" class="absolute top-4 right-4 md:top-6 md:right-6 p-3 rounded-full bg-stone-50 hover:bg-emerald-50 hover:text-emerald-700 text-stone-500 transition-colors border border-stone-200/80">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <!-- Project Content inside Modal -->
+            <div id="modal-content" class="text-stone-800">
+                <!-- Loaded dynamically by Javascript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white text-stone-500 py-8 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm">&copy; 2026 Darsh Desai. Engineering Portfolio. Built with passion.</p>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons and Project Database -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Project Database Object (Extracted directly from Darsh's Portfolio PDF)
+        const projectDatabase = {
+            rover: {
+                title: "Mars Rover Replica",
+                category: "Robotics & Space Systems",
+                duration: "Active (In Progress)",
+                role: "Mechanical Assembly Lead",
+                icon: "bot",
+                badge: "Status: Mechanical Assembly Complete | Next Phase: Electrical & Programming",
+                tools: [
+                    "Client CAD Models",
+                    "Fused Deposition Modeling (FDM)",
+                    "PETG / PLA Polymers",
+                    "Mechanical Load Testers",
+                    "Assembly Management Protocols",
+                    "Workflow Onboarding Kits"
+                ],
+                steps: [
+                    "Coordinated the full mechanical assembly stages of a high-fidelity planetary rover, directing a collaborative engineering team.",
+                    "Analyzed original client CAD files to identify printing risks; adjusted component layouts and orientations to secure highest-possible print reliability.",
+                    "Conducted manual structural strength and validation tests by exposing major physical frameworks to targeted mechanical loads.",
+                    "Isolated localized joint weak spots during testing, iterating structural geometry redesigns to achieve reliable stability.",
+                    "Designed training documentation to onboard new team members into standard 3D CAD modeling environments and printing hardware loops."
+                ]
+            },
+            rrt: {
+                title: "RRT Path Planning Program",
+                category: "Autonomous Programming",
+                duration: "Academic Project",
+                role: "Developer",
+                icon: "navigation",
+                badge: "Focus: Path Optimization & Spatial Mapping",
+                tools: [
+                    "MATLAB Engineering Suite",
+                    "Rapidly-exploring Random Tree (RRT)",
+                    "Greedy Shortcutting Algorithms",
+                    "Mathematical Interpolation",
+                    "Occupancy Grid Formats",
+                    "Obstacle Avoidance Logic"
+                ],
+                steps: [
+                    "Authored a program inside MATLAB that automatically imports user-supplied 2D space occupancy layout maps.",
+                    "Mapped specific coordinate inputs defining start and end targets, then initialized automated trajectory generation.",
+                    "Built tree-structures that extend randomly across coordinate space, avoiding mapped structural obstacles.",
+                    "Coded a secondary 'Greedy Shortcutting' routing sequence to mathematically eliminate unnecessary zigzag vectors, cutting overall travel distance.",
+                    "Implemented custom interpolation algorithms to smooth raw directional shifts, ensuring predictable movement for automated systems."
+                ]
+            },
+            stress: {
+                title: "Stress Analysis Application",
+                category: "Structural Analysis",
+                duration: "First Class Mark (100%)",
+                role: "Solo Architect",
+                icon: "activity",
+                badge: "Mark: 100% (Outstanding Achievement)",
+                tools: [
+                    "MATLAB App Designer",
+                    "Automated Loading Integrations",
+                    "Sanity-checking Verification Code",
+                    "Interactive Boundary Constraints",
+                    "Shear Force Diagrams (SFD)",
+                    "Bending Moment Diagrams (BMD)"
+                ],
+                steps: [
+                    "Engineered a fully automated stress mapping program to calculate variable bending vectors within horizontal support beams.",
+                    "Implemented modular formula scripts to parse inputs representing lorry axles and tandem wheel spacings.",
+                    "Coded live margin-of-safety constraint sweeps that alert users when specific material safety factors are exceeded.",
+                    "Designed a rich graphical user interface via MATLAB App Designer featuring interactive variable inputs and real-time outputs.",
+                    "Configured dynamic plotting canvas blocks that instantly generate both Shear Force and Bending Moment diagrams."
+                ]
+            },
+            mould: {
+                title: "Injection-Moulded Dog Bowl",
+                category: "Design for Manufacture (DFM)",
+                duration: "CAD/CAM Coursework",
+                role: "Lead DFM Modeler",
+                icon: "package",
+                badge: "Focus: Tooling Optimization & Draft Analysis",
+                tools: [
+                    "PTC Creo Parametric",
+                    "Draft Clearance Calculators",
+                    "Weld Line Thermal Modelers",
+                    "CNC Toolpath Generation (CAM)",
+                    "Core and Cavity Split Lines"
+                ],
+                steps: [
+                    "Modeled an injection-moulded pet food bowl designed from scratch to maximize industrial tooling compatibility.",
+                    "Conducted draft analyses within Creo to verify side wall tapers, guaranteeing friction-free part ejection.",
+                    "Evaluated thermal polymer behaviors to minimize cosmetic defects, air pockets, and structural weld lines during filling.",
+                    "Engineered the full structural manufacturing mould assembly, separating tooling plates along logical split lines.",
+                    "Exported manufacturing-ready CAM toolpaths and formatted a complete process file for physical milling."
+                ]
+            },
+            backpack: {
+                title: "Modular Backpack Concept",
+                category: "Product Design",
+                duration: "First Class Mark (82%)",
+                role: "CAD Assembly Lead (Team of 4)",
+                icon: "briefcase",
+                badge: "Mark: 82% (Excellent Innovation)",
+                tools: [
+                    "Autodesk Fusion 360",
+                    "Pugh Decision Matrix Evaluation",
+                    "Rail Interlocking Structural Assemblies",
+                    "Material Stress Simulations",
+                    "Commuter Comfort Ergonomics"
+                ],
+                steps: [
+                    "Collaborated within a team of four to design a versatile backpack tailored to long-distance daily commuters.",
+                    "Structured a weighted Pugh Matrix comparing design parameters to guide the team toward the strongest engineering configuration.",
+                    "Engineered the primary CAD virtual prototype in Fusion 360, mapping mechanical fits between all components.",
+                    "Designed a lightweight, robust interlocking rail mechanism that lets users quickly swap specialized modular storage pods.",
+                    "Simulated localized wear and fatigue stresses on physical attachment brackets to ensure long-term durability."
+                ]
+            }
+        };
+
+        // Modal Elements safely selected
+        const modal = document.getElementById('project-modal');
+        const modalContainer = document.getElementById('modal-container');
+        const modalContent = document.getElementById('modal-content');
+
+        // Function to open project modal with populated data
+        function openProject(key) {
+            const p = projectDatabase[key];
+            if (!p || !modalContent || !modal || !modalContainer) return;
+
+            // Build Tools & Materials HTML List (Themed for light mode)
+            const toolsHtml = p.tools.map(tool => `
+                <li class="flex items-start gap-2 text-stone-600 py-1.5 border-b border-stone-100 text-sm md:text-base">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 mt-1 flex-shrink-0"></i>
+                    <span>${tool}</span>
+                </li>
+            `).join('');
+
+            // Build Process Steps HTML List (Themed for light mode)
+            const stepsHtml = p.steps.map((step, idx) => `
+                <div class="flex items-start gap-4 mb-4 text-sm md:text-base">
+                    <div class="bg-emerald-600 text-white font-bold w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-xs md:text-sm mt-0.5">
+                        ${idx + 1}
+                    </div>
+                    <p class="text-stone-600 leading-relaxed">${step}</p>
+                </div>
+            `).join('');
+
+            // Populate Modal Content
+            modalContent.innerHTML = `
+                <div class="flex items-center gap-2 mb-2 pr-8">
+                    <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest bg-emerald-50 border border-emerald-100 px-3 py-1 rounded-full">${p.category}</span>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-extrabold text-stone-900 mb-2 flex items-center gap-2 pr-8">
+                    <i data-lucide="${p.icon}" class="w-6 h-6 text-emerald-600"></i> ${p.title}
+                </h3>
+                
+                <p class="text-xs text-emerald-700 font-medium mb-4 italic">${p.badge}</p>
+                
+                <div class="flex flex-wrap gap-4 mb-6 text-xs md:text-sm text-stone-600 bg-stone-50 p-4 rounded-2xl border border-stone-100">
+                    <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-4 h-4 text-emerald-600"></i> Project phase: ${p.duration}</span>
+                    <span class="flex items-center gap-1.5"><i data-lucide="user" class="w-4 h-4 text-emerald-600"></i> My Role: ${p.role}</span>
+                </div>
+
+                <div class="space-y-8 mt-6">
+                    <!-- Tools/Components Section -->
+                    <div class="bg-stone-50/80 p-4 md:p-6 rounded-2xl border border-stone-150">
+                        <h4 class="font-extrabold text-stone-900 text-base md:text-lg mb-4 flex items-center gap-2">
+                            <i data-lucide="cpu" class="text-emerald-600 w-5 h-5"></i> Core Tools & Technologies
+                        </h4>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1">
+                            ${toolsHtml}
+                        </ul>
+                    </div>
+
+                    <!-- Development Steps Section -->
+                    <div>
+                        <h4 class="font-extrabold text-stone-900 text-base md:text-lg mb-4 flex items-center gap-2">
+                            <i data-lucide="git-commit" class="text-emerald-600 w-5 h-5"></i> Engineering Process Steps
+                        </h4>
+                        <div class="space-y-2">
+                            ${stepsHtml}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Display Modal
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalContainer.classList.remove('scale-95');
+            modalContainer.classList.add('scale-100');
+            
+            // Re-initialize icons inside modal
+            lucide.createIcons();
+        }
+
+        // Close Modal Function
+        function closeProject() {
+            if (!modal || !modalContainer) return;
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalContainer.classList.remove('scale-100');
+            modalContainer.classList.add('scale-95');
+        }
+
+        // Close modal if user clicks outside container
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeProject();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
