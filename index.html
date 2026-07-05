@@ -13,10 +13,10 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         /* Direct gradient mapping from your sunset/sea photo */
         .sky-horizon-gradient {
-            background: linear-gradient(180deg, 
+            background: linear-gradient(180deg,
                 #1b314f 0%,    /* Deep twilight blue from top of sky */
                 #3a5975 35%,   /* Soft blue mid-sky transition */
                 #759cb9 65%,   /* Pale light blue above horizon */
@@ -48,31 +48,34 @@
 
     <!-- Main Container -->
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
-        
+
         <!-- Minimalist Header -->
         <header class="text-center mb-20 fade-in">
             <!-- Horizon Badge -->
             <div class="inline-flex items-center gap-2 bg-white/45 border border-white/60 text-slate-800 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-5 backdrop-blur-md shadow-sm">
                 <i data-lucide="compass" class="w-4 h-4 text-slate-700"></i> Engineering Project Directory
             </div>
-            
+
             <!-- Headline -->
             <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-3 text-white drop-shadow-[0_2px_10px_rgba(27,49,79,0.15)]">
                 Darsh Desai
             </h1>
-            
+
             <!-- Subtitle -->
-            <p class="text-[#203a55] font-semibold tracking-widest text-sm md:text-base uppercase max-w-xl mx-auto mb-8">
+            <p class="text-5xl md:text-7xl font-extrabold tracking-tight mb-3 text-white drop-shadow-[0_2px_10px_rgba(27,49,79,0.15)]">
                 Mechanical Engineering Student <span class="opacity-50">|</span> Portsmouth, UK
             </p>
-            
+
             <!-- Contact Actions -->
-            <div class="flex flex-wrap justify-center gap-3 max-w-md mx-auto mb-8">
+            <div class="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mb-8">
                 <a href="mailto:darsh.desai.pn@gmail.com" class="flex items-center gap-2 bg-[#1b314f] text-white hover:bg-[#122136] px-5 py-2.5 rounded-2xl font-medium text-sm transition-all duration-300 shadow-md shadow-blue-900/10">
                     <i data-lucide="mail" class="w-4 h-4"></i> Contact Email
                 </a>
-                <a href="https://www.linkedin.com/in/ddpn" target="_blank" class="flex items-center gap-2 bg-white/60 border border-white/80 text-slate-800 hover:bg-white/80 px-5 py-2.5 rounded-2xl font-medium text-sm transition-all duration-300 shadow-sm">
+                <a href="https://www.linkedin.com/in/ddpn/" target="_blank" rel="noopener" class="flex items-center gap-2 bg-white/60 border border-white/80 text-slate-800 hover:bg-white/80 px-5 py-2.5 rounded-2xl font-medium text-sm transition-all duration-300 shadow-sm">
                     <i data-lucide="linkedin" class="w-4 h-4 text-[#1b314f]"></i> LinkedIn Profile <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-40"></i>
+                </a>
+                <a href="https://github.com/dpndesai11" target="_blank" rel="noopener" class="flex items-center gap-2 bg-white/60 border border-white/80 text-slate-800 hover:bg-white/80 px-5 py-2.5 rounded-2xl font-medium text-sm transition-all duration-300 shadow-sm">
+                    <i data-lucide="github" class="w-4 h-4 text-[#1b314f]"></i> GitHub <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-40"></i>
                 </a>
             </div>
 
@@ -85,7 +88,7 @@
         <!-- Project Deck -->
         <section id="projects-section" class="fade-in">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                
+
                 <!-- Card 1: Mars Rover Replica -->
                 <div onclick="openProject('rover')" class="group cursor-pointer sea-glass-card rounded-[2rem] p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between min-h-[340px] relative overflow-hidden">
                     <div>
@@ -115,8 +118,8 @@
                             <span class="text-[10px] font-bold text-slate-700 uppercase tracking-widest bg-white/80 px-2.5 py-1 rounded-full border border-white/60">Structural Math</span>
                             <span class="text-[10px] font-extrabold text-[#1b314f] bg-white/90 px-2 py-0.5 rounded border border-white flex-shrink-0">Grade: 100%</span>
                         </div>
-                        <h3 class="text-xl font-bold dark-wet-sand-text mt-3 group-hover:text-[#1b314f] transition-colors">Stress Analysis App</h3>
-                        <p class="text-slate-700 text-xs mt-2 line-clamp-2">Programmed custom numerical stress visualization environments inside MATLAB to evaluate variable axle load limits.</p>
+                        <h3 class="text-xl font-bold dark-wet-sand-text mt-3 group-hover:text-[#1b314f] transition-colors">Bridge Stress Analysis App</h3>
+                        <p class="text-slate-700 text-xs mt-2 line-clamp-2">Interactive MATLAB tool analysing a simply supported bridge under Tandem and Lorry load cases, computing reactions plus shear and bending diagrams.</p>
                     </div>
                     <div class="flex items-center justify-between mt-6 pt-4 border-t border-white/40">
                         <span class="text-slate-600 text-[11px] flex items-center gap-1"><i data-lucide="code-2" class="w-3.5 h-3.5 text-[#1b314f]"></i> MATLAB</span>
@@ -172,8 +175,8 @@
                             <span class="text-[10px] font-bold text-slate-700 uppercase tracking-widest bg-white/80 px-2.5 py-1 rounded-full border border-white/60">Design for Manufacture</span>
                             <span class="text-[10px] font-extrabold text-[#1b314f] bg-white/90 px-2 py-0.5 rounded border border-white flex-shrink-0">Grade: 71%</span>
                         </div>
-                        <h3 class="text-xl font-bold dark-wet-sand-text mt-3 group-hover:text-[#1b314f] transition-colors">Injection Moulded Bowl</h3>
-                        <p class="text-slate-700 text-xs mt-2 line-clamp-2">Designed high-volume production moulds within PTC Creo utilizing active wall thickness, thermal, and CAM machining reviews.</p>
+                        <h3 class="text-xl font-bold dark-wet-sand-text mt-3 group-hover:text-[#1b314f] transition-colors">Injection-Moulded Dog Bowl</h3>
+                        <p class="text-slate-700 text-xs mt-2 line-clamp-2">Took a mass-production dog bowl from concept to complete two-part mould and machining strategy in PTC Creo, covering draft, defect and wall-thickness analysis.</p>
                     </div>
                     <div class="flex items-center justify-between mt-6 pt-4 border-t border-white/40">
                         <span class="text-slate-600 text-[11px] flex items-center gap-1"><i data-lucide="cpu" class="w-3.5 h-3.5 text-[#1b314f]"></i> Creo CAM</span>
@@ -196,6 +199,25 @@
                     </div>
                     <div class="flex items-center justify-between mt-6 pt-4 border-t border-white/40">
                         <span class="text-slate-600 text-[11px] flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5 text-[#1b314f]"></i> Team of 4</span>
+                        <span class="text-[#1b314f] font-bold text-xs flex items-center gap-1">Open System <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                    </div>
+                </div>
+
+                <!-- Card 7: ABS Quarter-Car Model -->
+                <div onclick="openProject('abs')" class="group cursor-pointer sea-glass-card rounded-[2rem] p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between min-h-[340px] relative overflow-hidden">
+                    <div>
+                        <div class="w-12 h-12 bg-white/80 border border-white rounded-2xl flex items-center justify-center mb-6 text-[#1b314f] shadow-sm">
+                            <i data-lucide="gauge" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex items-center justify-between gap-1">
+                            <span class="text-[10px] font-bold text-slate-700 uppercase tracking-widest bg-white/80 px-2.5 py-1 rounded-full border border-white/60">Control Systems</span>
+                            <span class="text-[10px] font-extrabold text-[#1b314f] bg-white/90 px-2 py-0.5 rounded border border-white flex-shrink-0">Grade: 78%</span>
+                        </div>
+                        <h3 class="text-xl font-bold dark-wet-sand-text mt-3 group-hover:text-[#1b314f] transition-colors">ABS Quarter-Car Model</h3>
+                        <p class="text-slate-700 text-xs mt-2 line-clamp-2">Built a Simulink quarter-car model of an anti-lock braking system, using bang-bang control to regulate wheel slip around its peak-grip threshold.</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-6 pt-4 border-t border-white/40">
+                        <span class="text-slate-600 text-[11px] flex items-center gap-1"><i data-lucide="git-branch" class="w-3.5 h-3.5 text-[#1b314f]"></i> Simulink</span>
                         <span class="text-[#1b314f] font-bold text-xs flex items-center gap-1">Open System <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
                     </div>
                 </div>
@@ -229,90 +251,105 @@
         // Init icons
         lucide.createIcons();
 
-        // Project Local Registry Array 
+        // Project Local Registry Array
         const projectDatabase = {
             rover: {
-                title: "Programmable Mars Rover & AMR Architecture",
+                title: "Programmable Mars Rover Replica",
                 category: "Leadership & Robotics",
-                badge: "Manufacturing Club Lead | Active Phase",
-                info: "Directing 30-member multidisciplinary project tracking CAD variations, components, and fabrication lines.",
-                tools: ["Creo Engineering CAD", "LiDAR Scanner Integration", "Raspberry Pi Integration", "Additive Manufacturing (PETG/PLA)", "Mechanical Strength Loading", "Supplier Resource Budgeting"],
+                badge: "Manufacturing Club Lead | Mechanical Complete, Electrical & Programming In Progress",
+                info: "As lead of the University of Portsmouth Manufacturing Club, I am directing the design and manufacture of a full-scale programmable Mars rover replica, a long-running, multi-disciplinary project involving thirty students from across engineering disciplines. My role spans the full lifecycle: overseeing mechanical design and fabrication of the rover's structural components, coordinating interdependent mechanical, electrical and integration workstreams, managing the timeline toward integration milestones, and maintaining relationships with suppliers and lecturers to procure components within budget. The project is now transitioning into electrical integration and programming.",
+                tools: ["PTC Creo CAD", "3D Printing (FDM)", "Rocker-Bogie Suspension Design", "Load & Deflection Testing", "Print Orientation Optimisation", "Team Leadership (30 members)"],
                 steps: [
-                    "Coordinating multi-phase mechanical assembly blueprints of a functional exploration rover chassis alongside engineering modules.",
-                    "Overseeing autonomous AMR pathing tests leveraging Raspberry Pi systems and LiDAR tracking arrays.",
-                    "Conducting physical loading stress tests to locate framework weaknesses and adjusting design boundaries inside Creo.",
-                    "Collaborating with Portsmouth technical staff and industry suppliers to secure raw materials within budget constraints.",
-                    "Preparing documentation pathways and teaching core 3D printing and advanced academic additive manufacturing parameters to club members."
+                    "Overseeing the mechanical design and fabrication of the rover's structural components, including the rocker-bogie suspension and central frame.",
+                    "Leading redesign iterations where load testing revealed structural weaknesses, restoring integrity before committing to final parts.",
+                    "Developing and documenting 3D-print orientation guidelines that reduced print failures and improved the strength of critical load-bearing parts.",
+                    "Coordinating mechanical, electrical, and integration workstreams and managing the timeline so subteam progress converges on integration milestones.",
+                    "Onboarding new members through practical CAD and 3D-printing workshops, and managing supplier and lecturer relationships to procure components within budget."
                 ]
             },
             stress: {
-                title: "Structural Beam Stress Analysis Application",
-                category: "Structural Math & Simulation",
+                title: "Simply Supported Bridge Stress Analysis Application",
+                category: "Solid Mechanics & Simulation",
                 badge: "Coursework Grade: 100% (First Class)",
-                info: "Engineered robust computation software compiling shear forces, bending moments, and axle parameters.",
-                tools: ["MATLAB Computing Engine", "Differential Equations (ODEs)", "Bending Stress Mathematical Modeling", "Real-Time Graphing Systems", "Margin-of-Safety Triggers", "Verification Case Audits"],
+                info: "A fully functional MATLAB application that analyses the structural behaviour of bridge beams under variable loading conditions across two scenarios, the Tandem and Lorry systems. The user inputs loading parameters and the application automatically computes and outputs shear force and bending moment distributions with no further interaction. A comprehensive validation layer, sanity checks and constraint verifications, flags inconsistent or out-of-range outputs before they reach the user, treating reliability as a non-negotiable requirement. The App Designer interface mirrors how an engineer naturally reasons through the problem: inputs first, visualised outputs second.",
+                images: ["stress-tandem.png", "stress-lorry.png"],
+                tools: ["MATLAB Computing Engine", "MATLAB App Designer GUI", "Automated Calculation Pipeline", "Shear Force & Bending Moment Solvers", "Validation & Constraint Checks", "Tandem & Lorry Load Modelling"],
                 steps: [
-                    "Engineered a fully automated stress mapping program in MATLAB to analyze variable bending limits within support beams.",
-                    "Coded modular math arrays to parse varying dynamic configurations (e.g. multi-axle vehicle structures).",
-                    "Configured graphical canvas grids instantly plotting Shear Force Diagrams (SFD) and Bending Moment Diagrams (BMD).",
-                    "Programmed automated constraint triggers that flash alerts when structural design safety factors are violated.",
-                    "Validated calculator precision using exact control cases, securing a perfect 100% evaluation score."
+                    "Translated the theoretical mechanics of beam stress analysis into a reliable, automated software tool.",
+                    "Engineered a full calculation pipeline: the user inputs loading parameters and the app computes shear force and bending moment distributions with no manual steps.",
+                    "Built a validation layer of sanity checks and constraint verifications that flag inconsistent or out-of-range outputs before they reach the user.",
+                    "Designed the App Designer interface around an engineer's natural workflow, keeping the tool accessible without touching the underlying code.",
+                    "Modelled the Tandem and Lorry loading systems for direct comparison, validating outputs to secure a perfect 100% grade."
                 ]
             },
             rrt: {
                 title: "RRT Autonomous Path Planning Software",
                 category: "Autonomous Systems & Heuristics",
                 badge: "Coursework Grade: 88% (First Class)",
-                info: "Developed mapping trajectory modules calculating coordinates through static obstacles.",
-                tools: ["MATLAB Algorithms", "Rapidly-exploring Random Trees (RRT)", "Greedy Shortcutting Protocols", "Spline Curve Trajectory Smoothing", "Obstacle Detection Vectors", "Kinematics Analysis"],
+                info: "A complete autonomous path planning system in MATLAB using the Rapidly-exploring Random Tree (RRT) algorithm, extended with two layers of optimisation to significantly improve the efficiency and smoothness of generated paths. RRT iteratively samples random points, finds the nearest node in the growing tree, and extends toward each sample in small collision-checked steps, efficiently covering large, complex spaces without evaluating every position. I designed my own occupancy maps to test robustness across multiple distinct environments rather than a single tuned scenario.",
+                tools: ["MATLAB", "Rapidly-exploring Random Trees (RRT)", "Custom Occupancy Map Design", "Interpolation-based Path Smoothing", "Greedy Shortcutting Optimisation", "Collision Checking"],
                 steps: [
-                    "Coded a pathfinding navigation system in MATLAB to import 2D spatial layouts and map optimal coordinate pathways.",
-                    "Coded random coordinate generation nodes checking for safe geometry gaps and avoiding mapped obstacles.",
-                    "Integrated a Greedy Shortcutting logic step to eliminate unnecessary coordinate changes, compressing route lengths.",
-                    "Applied interpolation spline equations to convert sharp corners into smooth pathways matching rolling vehicle steering capabilities.",
-                    "Tested navigation speeds across coordinate matrices to secure an 88% project evaluation grade."
+                    "Implemented the base RRT algorithm from scratch, sampling random points and extending the tree in small, collision-checked steps toward each sample.",
+                    "Designed my own occupancy maps to verify robustness across multiple distinct environments, not just the one I had optimised for.",
+                    "Applied an interpolation-based smoothing pass to identify and remove redundant intermediate waypoints without altering path validity.",
+                    "Added a greedy shortcutting algorithm that collapses intermediate nodes wherever a direct, obstacle-free line exists, aggressively reducing path length while preserving clearance.",
+                    "Documented a key limitation: the shortcutting threshold needed per-environment tuning, and I recorded this trade-off as part of the work, earning an 88% grade."
                 ]
             },
             gearbox: {
                 title: "Multi-Stage Power Transmission Gearbox",
                 category: "Mechanical Power Transmission",
                 badge: "Design Core Track Coursework | Grade: 81% (First Class)",
-                info: "Engineered Multi-stage transmission gears resolving structural fatigue limits.",
-                tools: ["CAD Component Assemblies", "Pulley Ratio Formulations", "Involute Gear Teeth Profiling", "Structural Stress Verification", "Economic Material Sweeps", "Detailed Engineering Drawings"],
+                info: "Working with a partner, I designed a multi-stage gearbox to meet a defined set of client objectives, balancing performance requirements against cost constraints throughout. The project required determining an appropriate transmission configuration, selecting suitable belt and gear types, and verifying that every component met the stress requirements of the expected loading conditions. The outcome was a fully specified design supported by a complete set of calculations justifying each component selection, ready to serve as the basis for a detailed design and procurement phase.",
+                tools: ["Engineering Analysis", "Multi-Stage Transmission Configuration", "Belt Selection & Tension Analysis", "Gear Tooth & Module Calculations", "Bending & Contact Stress Verification", "Supplier Catalogue Referencing"],
                 steps: [
-                    "Co-designed a multi-stage power reduction gearbox system balancing structural reliability against production cost metrics.",
-                    "Selected ideal pulley sizes and belt parameters to fulfill torque-speed operational specifications.",
-                    "Evaluated bending and contact stress variables across gear tooth coordinates to guarantee design safety thresholds.",
-                    "Iterated structural dimensions to minimize material weight allocations and satisfy targeted price guidelines.",
-                    "Created complete orthographic engineering blueprints detailing assembly setups and machining surface tolerances."
+                    "Determined an appropriate transmission configuration and selected suitable belt and gear types to meet the client's performance objectives.",
+                    "Calculated tooth counts, module sizes, and material specifications for each stage to ensure adequate safety factors against bending and contact stress failure.",
+                    "Sized belt and centre-distance parameters from the input-stage power and speed, accounting for the effect of belt tension on shaft and bearing loads.",
+                    "Cross-referenced component selections against supplier catalogues to keep the design manufacturable at realistic cost, avoiding overspecification.",
+                    "Produced a fully specified design backed by calculations justifying each selection, achieving an 81% grade in a two-person team."
                 ]
             },
             mould: {
-                title: "Industrial Injection Moulded Component Bowl",
+                title: "Injection-Moulded Dog Bowl",
                 category: "Design for Manufacture (DFM)",
-                badge: "Creo Advanced CAD/CAM Study | Grade: 71% (First Class)",
-                info: "Engineered high-volume manufacturing molds checking drafting paths and split structures.",
-                tools: ["PTC Creo Parametric", "Draft Clearance Calculations", "Parting Line Split Strategies", "Wall Uniformity Assessments", "Milling Process Toolpaths (CAM)", "Thermal Blemish Mitigation"],
+                badge: "Coursework Grade: 71% (First Class)",
+                info: "A dog bowl designed for mass production via injection moulding, taken from initial concept through to a complete tooling design and machining strategy, addressing every stage of the manufacturing process rather than stopping at part geometry alone. The intent was a complete, handover-ready package: not just a part design, but everything a manufacturer would need to move immediately into production. The project gave me a deep appreciation for design for manufacture as a discipline, where final geometry is shaped as much by what the process can reliably produce as by what the designer intends.",
+                tools: ["PTC Creo Parametric", "Draft Angle Analysis", "Defect Analysis (Air Traps & Weld Lines)", "Wall Thickness Control", "Two-Part Mould & Gating Design", "CAM Milling Toolpaths"],
                 steps: [
-                    "Designed an injection-moulded pet feeding bowl optimized for automated industrial tooling production.",
-                    "Conducted draft angle clearance checks in Creo to verify sides clean cleanly during automated mold ejection.",
-                    "Sized uniform wall thickness profiles across the coordinate geometry to prevent polymer sink marks and cosmetic cooling errors.",
-                    "Split physical tooling layers cleanly across logical parting coordinate planes, defining Core and Cavity halves.",
-                    "Exported mill-ready toolpaths specifying spindle rates and machining steps for the CNC hardware team."
+                    "Ran a detailed draft angle analysis to verify the part could be extracted cleanly from the mould without damage.",
+                    "Identified potential defect sites, air traps and weld lines, and iterated the geometry until the risk of each was minimised.",
+                    "Controlled wall thickness throughout to ensure consistent cooling and reduce the likelihood of warpage or sink marks.",
+                    "Selected a food-safe material able to withstand the moulding process's thermal loads while meeting the product's mechanical requirements.",
+                    "Designed a two-part mould with draft, parting line, runner and gate geometry, then generated milling files and a process document for a handover-ready package."
                 ]
             },
             backpack: {
                 title: "Parametric Modular Commuter Backpack System",
                 category: "Product Design & Optimization",
                 badge: "Coursework Grade: 82% (First Class)",
-                info: "Designed functional daily utility frames utilizing Pugh selection matrices.",
-                tools: ["Autodesk Fusion 360", "Pugh Concept Matrix Checks", "Parametric Model Interlocking", "Ergonomic Usability Studies", "Structural Rail Mechanics", "Component Fit Calculations"],
+                info: "Working within a four-person team, I contributed to a modular backpack system for long-distance commuters, built around the principle that a single bag should adapt to different use cases through interchangeable modules rather than requiring the user to own multiple bags. The selected concept centred on a rail-based frame: a rigid internal structure with standardised attachment points that let modular components be mounted, repositioned, and swapped without tools. The project developed my ability to work within a collaborative design environment, managing competing ideas through structured evaluation and translating a concept into geometry that could actually be built.",
+                tools: ["Autodesk Fusion 360", "Pugh Concept Matrix", "Parametric CAD Assembly", "Rail-Based Modular Frame", "Engineering-Standard Technical Drawings", "Nylon Material Selection"],
                 steps: [
-                    "Co-developed an innovative commuter backpack frame system inside a 4-person engineering team.",
-                    "Applied structured Pugh decision arrays to weigh proposed layout iterations against ergonomic and cost benchmarks.",
-                    "Modeled high-fidelity parametric assemblies in Fusion 360 ensuring clean tolerances between sliding elements.",
-                    "Engineered a robust lightweight structural rail lock to safely hold and swap dynamic modular accessory packs.",
-                    "Analyzed high-stress connection points for strength under load, securing an 82% project score."
+                    "Ran a structured concept evaluation using a Pugh matrix to compare design directions against defined user and functional criteria.",
+                    "Developed the parametric CAD assembly in Fusion 360, modelling the rail system and a representative set of modules.",
+                    "Validated that the attachment geometry worked correctly across different configurations of mounted components.",
+                    "Produced engineering-standard technical drawings of the frame, defining dimensions, tolerances, and material specifications for manufacture.",
+                    "Specified Nylon for the frame, balancing strength, low weight, and compatibility with both injection moulding and additive prototyping, earning an 82% grade."
+                ]
+            },
+            abs: {
+                title: "ABS Quarter-Car Model",
+                category: "Control Systems & Simulation",
+                badge: "Coursework Grade: 78% (First Class)",
+                info: "A quarter-car model of an Anti-lock Braking System (ABS) built in Simulink to study brake control dynamics and validate a feedback control strategy under realistic braking conditions. The model captures a single wheel, its unsprung mass, and the tyre-road interface, isolating the braking behaviour of interest without the complexity of a full vehicle. Initialised at 25 m/s, it monitors wheel slip continuously; at a slip ratio of about 0.2 a tyre generates near-peak braking force while retaining lateral grip for steering, and exceeding it risks lockup and loss of steering control.",
+                tools: ["MATLAB Simulink", "Quarter-Car Vehicle Dynamics", "Wheel Slip Ratio Control", "Bang-Bang (On-Off) Controller", "Feedback Control Strategy", "Tyre-Road Friction Modelling"],
+                steps: [
+                    "Modelled a single-wheel quarter-car system, capturing the unsprung mass and tyre-road interface to isolate braking dynamics.",
+                    "Initialised the vehicle at 25 m/s and decelerated immediately, monitoring the wheel slip ratio throughout the stop.",
+                    "Implemented a bang-bang controller regulating slip around 0.2, fully applying brake pressure below target and releasing above it.",
+                    "Analysed the characteristic sawtooth slip response, relating each rising and falling edge to brake application and release.",
+                    "Identified and documented a division-by-zero limitation as vehicle speed approaches zero, and proposed a hysteresis band to reduce chattering, earning a 78% grade."
                 ]
             }
         };
@@ -332,6 +369,15 @@
                 </li>
             `).join('');
 
+            const imagesHtml = (p.images && p.images.length) ? `
+                <div class="space-y-3">
+                    <h4 class="font-bold text-[#1a2c3d] text-xs md:text-sm flex items-center gap-1.5"><i data-lucide="image" class="text-[#1b314f] w-4 h-4"></i> Application Screenshots</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        ${p.images.map(img => `<img src="${img}" alt="${p.title} screenshot" loading="lazy" class="w-full rounded-xl border border-slate-200 shadow-sm bg-white" />`).join('')}
+                    </div>
+                </div>
+            ` : '';
+
             const stepsHtml = p.steps.map((s, idx) => `
                 <div class="flex items-start gap-3.5 text-xs md:text-sm">
                     <div class="bg-[#1b314f] text-white font-bold w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 text-xs mt-0.5 shadow-sm">
@@ -346,8 +392,9 @@
                 <h3 class="text-2xl md:text-3xl font-bold text-[#1a2c3d] mb-1.5 pr-8 tracking-tight">${p.title}</h3>
                 <p class="text-xs text-[#1b314f] font-bold uppercase tracking-wider mb-4">${p.badge}</p>
                 <p class="text-xs md:text-sm text-slate-600 leading-relaxed italic mb-6 border-l-2 border-[#1b314f]/40 pl-3">${p.info}</p>
-                
+
                 <div class="space-y-6">
+                    ${imagesHtml}
                     <div class="bg-slate-50 p-4 md:p-6 rounded-2xl border border-slate-100">
                         <h4 class="font-bold text-[#1a2c3d] text-xs md:text-sm mb-3 flex items-center gap-1.5"><i data-lucide="cpu" class="text-[#1b314f] w-4 h-4"></i> Technical System Stack</h4>
                         <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">${toolsHtml}</ul>
