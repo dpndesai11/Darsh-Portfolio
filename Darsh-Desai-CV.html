@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darsh Desai | CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1A1A1E; --muted:#565660; --faint:#7a7a80; --line:#D8D6CE;
+  --accent:#C24A42; --accent-deep:#8A2E2A; --band:#1B1C21; --paper:#FBFAF6; --tint:#F3E9E7;
+  --disp:'Space Grotesk',sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace; --body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#3a3b40;font-family:var(--body);color:var(--ink);line-height:1.45;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.sheet{width:210mm;min-height:297mm;background:var(--paper);margin:16px auto;box-shadow:0 6px 30px rgba(0,0,0,.4);position:relative;overflow:hidden}
+.pad{padding:11mm 15mm 9mm}
+
+/* header band */
+.band{background:var(--band);color:#F6F5F1;padding:10mm 15mm 8mm;position:relative;text-align:center}
+.band::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--accent)}
+.eyebrow{font-family:var(--mono);font-size:9.5pt;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
+.name{font-family:var(--disp);font-weight:700;font-size:30pt;line-height:1;letter-spacing:-.5px;text-transform:uppercase}
+.tagline{font-family:var(--body);font-weight:500;font-size:11pt;color:#c9c7c0;margin-top:7px}
+.contact{font-family:var(--mono);font-size:8.6pt;color:#c3c1ba;margin-top:14px;display:flex;flex-direction:column;align-items:center;gap:7px}
+.crow{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 15px}
+.contact span,.contact a{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.contact svg{width:11px;height:11px;color:var(--accent);flex-shrink:0}
+.contact a{text-decoration:underline;text-underline-offset:2.5px;text-decoration-thickness:.5px;text-decoration-color:#8f8d86}
+.cc{font-family:var(--body);font-size:7pt;font-weight:700;color:#1B1C21;background:var(--accent);padding:1px 4px;border-radius:2px;letter-spacing:.5px}
+
+/* sections */
+.sec{margin-top:12px}
+.sec:first-child{margin-top:0}
+.sec-l{font-family:var(--mono);font-size:9.5pt;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-deep);display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.sec-l::after{content:"";flex:1;height:2px;background:var(--line)}
+p.lead{font-size:10pt;color:#000;line-height:1.46;text-align:justify}
+
+/* skills */
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:5px 26px}
+.sk{display:flex;gap:8px;font-size:9.4pt;padding:3px 0;border-bottom:1px solid #ebe9e1}
+.sk .k{font-weight:600;color:var(--ink);min-width:118px;flex-shrink:0}
+.sk .v{color:#000}
+
+/* projects grid */
+.projs{display:grid;grid-template-columns:1fr 1fr;gap:8px 22px}
+.proj{border-left:2.5px solid var(--accent);padding-left:11px}
+.proj .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.proj h4{font-family:var(--disp);font-weight:700;font-size:10.6pt;line-height:1.15;color:var(--ink)}
+.proj .grade{font-family:var(--mono);font-size:8.3pt;font-weight:700;color:#fff;background:var(--accent);padding:1.5px 6px;white-space:nowrap;flex-shrink:0}
+.proj .tools{font-family:var(--mono);font-size:8pt;color:var(--faint);margin:2px 0 3px}
+.proj p{font-size:9.3pt;color:#000;line-height:1.4;text-align:justify}
+
+/* experience */
+.job{margin-bottom:7px}
+.job:last-child{margin-bottom:0}
+.job .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:1px}
+.job h4{font-family:var(--disp);font-weight:700;font-size:11pt;color:var(--ink)}
+.job .date{font-family:var(--mono);font-size:9pt;font-weight:700;color:var(--accent-deep);white-space:nowrap;flex-shrink:0}
+.job .org{font-size:9.4pt;color:var(--muted);font-weight:500;margin-bottom:4px}
+.job ul{list-style:none}
+.job li{position:relative;padding-left:14px;font-size:9.5pt;color:#000;line-height:1.42;margin-bottom:2px;text-align:justify}
+.job li::before{content:"";position:absolute;left:0;top:6.5px;width:5px;height:5px;background:var(--accent);transform:rotate(45deg)}
+
+/* education */
+.edu{margin-bottom:7px}
+.edu .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.edu h4{font-family:var(--disp);font-weight:700;font-size:11pt}
+.edu .date{font-family:var(--mono);font-size:9pt;font-weight:700;color:var(--accent-deep);white-space:nowrap}
+.edu .org{font-size:9.4pt;color:var(--muted);margin-bottom:5px}
+.grades{display:flex;flex-wrap:wrap;gap:5px 7px;margin-top:5px}
+.grade-chip{font-family:var(--mono);font-size:8.6pt;border:1px solid var(--line);padding:2.5px 7px;color:#000}
+.grade-chip b{color:var(--accent-deep)}
+.edu p{font-size:9.5pt;color:#000;margin-top:3px;text-align:justify}
+.edu p .lab{font-weight:600;color:var(--ink)}
+
+/* meta */
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:6px 26px;font-size:9.4pt;color:#000}
+.meta .k{font-family:var(--mono);font-size:8.4pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--accent-deep);display:block;margin-bottom:2px}
+
+.foot{margin-top:14px;padding-top:8px;border-top:1px solid var(--line);font-family:var(--mono);font-size:8pt;color:var(--faint);text-align:center}
+
+@media print{
+  body{background:#fff}
+  .sheet{margin:0;box-shadow:none;width:auto;height:297mm;min-height:auto;overflow:hidden}
+  @page{size:A4;margin:0}
+  .sheet{page-break-after:always}
+  .sheet:last-child{page-break-after:auto}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<div class="sheet">
+  <div class="band">
+    <div class="eyebrow">Robotics · Automation · Intelligent manufacturing</div>
+    <div class="name">Darsh Desai</div>
+    <div class="contact">
+      <div class="crow">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Portsmouth, UK &amp; St. Légier, CH</span>
+      </div>
+      <div class="crow">
+        <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1z"/></svg> +44 7388 069279 <b class="cc">UK</b></span>
+        <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1z"/></svg> +41 79 530 12 06 <b class="cc">CH</b></span>
+        <a href="mailto:darsh.desai.pn@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> darsh.desai.pn@gmail.com</a>
+      </div>
+      <div class="crow">
+        <a href="https://www.linkedin.com/in/ddpn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg> linkedin.com/in/ddpn</a>
+        <a href="https://github.com/dpndesai11"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.26.8-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.82.57A12 12 0 0 0 12 .3z"/></svg> github.com/dpndesai11</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad">
+    <div class="sec">
+      <div class="sec-l">Profile</div>
+      <p class="lead">Mechanical engineer working at the intersection of robotics, automation and intelligent manufacturing, where mechanical design meets control, sensing and autonomy: building things that move, sense and think.</p>
+      <p class="lead" style="margin-top:7px">Currently leading a 30-person team building a programmable Mars rover, with funding secured to start a LiDAR navigation robot. Wrote an RRT path planner for a nonholonomic robot, modelled ECU-based ABS control in Simulink, and turned solid-mechanics theory into a validated MATLAB tool that scored 100%. Committed to designs that survive contact with reality, built, tested, refined, and documented when they break.</p>
+    </div>
+
+    <div class="sec">
+      <div class="sec-l">Core skills</div>
+      <div class="skills">
+        <div class="sk"><span class="k">Robotics &amp; Automation</span><span class="v">Path planning (RRT / Dubins), autonomous mobile robots, control systems, Industry 4.0</span></div>
+        <div class="sk"><span class="k">Mechanical Design</span><span class="v">PTC Creo, Fusion 360, AutoCAD, Onshape, Geometric Dimensioning &amp; Tolerancing, DFM</span></div>
+        <div class="sk"><span class="k">Simulation &amp; Analysis</span><span class="v">MATLAB, Simulink, FEA, mould-flow analysis, SFD / BMD</span></div>
+        <div class="sk"><span class="k">Manufacturing</span><span class="v">3D printing (FDM), injection moulding &amp; tooling, CAM / CNC, laser cutting</span></div>
+        <div class="sk"><span class="k">Programming &amp; Data</span><span class="v">Python, VBA, MS Excel</span></div>
+        <div class="sk"><span class="k">Leadership</span><span class="v">30-person team leadership, project &amp; timeline management, onboarding, stakeholder alignment</span></div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-l">Selected projects</div>
+      <div class="projs">
+        <div class="proj">
+          <div class="top"><h4>Bridge Stress Analysis App</h4><span class="grade">100%</span></div>
+          <div class="tools">MATLAB · App Designer</div>
+          <p>Automated shear-force and bending-moment tool for a simply supported bridge under Tandem and Lorry loads, with a validation layer that flags out-of-range outputs before they reach the user.</p>
+        </div>
+        <div class="proj">
+          <div class="top"><h4>RRT Path Planning</h4><span class="grade">88%</span></div>
+          <div class="tools">MATLAB · Dubins state space</div>
+          <p>Dubins-based RRT planner for a nonholonomic robot, extended with greedy shortcutting and smoothing to produce shorter, collision-free paths across custom occupancy maps.</p>
+        </div>
+        <div class="proj">
+          <div class="top"><h4>Modular Expandable Bag</h4><span class="grade">82%</span></div>
+          <div class="tools">Fusion 360 · Team of 4</div>
+          <p>Led Pugh-matrix concept selection and designed a spring-loaded, tool-free modular attachment mechanism; owned its manufacture and validated it for load-bearing and usability.</p>
+        </div>
+        <div class="proj">
+          <div class="top"><h4>Multi-Stage Gearbox</h4><span class="grade">81%</span></div>
+          <div class="tools">First-principles design · Team of 2</div>
+          <p>3:1 speed-increase gearbox for a 35 kW shipborne drive; belt, gear, shaft and bearing calculations to a 22,500-hour life, costed at £18,805 for a 100-unit run.</p>
+        </div>
+        <div class="proj">
+          <div class="top"><h4>ABS Quarter-Car Model</h4><span class="grade">78%</span></div>
+          <div class="tools">MATLAB Simulink</div>
+          <p>Evaluated ECU / PLC control architectures and modelled bang-bang relay control with a hysteresis band to hold wheel slip at its optimal, peak-grip threshold.</p>
+        </div>
+        <div class="proj">
+          <div class="top"><h4>Injection-Moulded Bowl</h4><span class="grade">71%</span></div>
+          <div class="tools">PTC Creo · CAM</div>
+          <p>Food-safe children's bowl taken to a two-part mould and CNC-simulated machining plan; compared PP and PETG to eliminate weld lines and air traps.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sheet">
+  <div class="pad">
+    <div class="sec">
+      <div class="sec-l">Experience</div>
+
+      <div class="job">
+        <div class="top"><h4>Manufacturing Club Lead</h4><span class="date">2025 – Present</span></div>
+        <div class="org">University of Portsmouth, UK</div>
+        <ul>
+          <li>Lead a 30-member multidisciplinary team designing and manufacturing a programmable Mars rover replica, directing mechanical design, fabrication and electrical integration.</li>
+          <li>Manage a 6-member sub-team developing an autonomous mobile robot, overseeing LiDAR and Raspberry Pi integration for object detection and navigation.</li>
+          <li>Secured university funding and institutional clearance for the robot; procure components with suppliers and lecturers within budget and to specification.</li>
+          <li>Deliver Creo and 3D-printing workshops and advise the team on load-bearing components, manufacturability and system integration.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="top"><h4>IT Industrialisation Intern</h4><span class="date">Aug – Sep 2025</span></div>
+        <div class="org">Philip Morris International, Lausanne, Switzerland</div>
+        <ul>
+          <li>Worked in the department responsible for launching factories and digitally integrating production systems.</li>
+          <li>Restructured the team's Confluence repository and documented the staged G0–G7 project lifecycle, improving organisation, searchability and onboarding.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="top"><h4>Data Quality &amp; Integration Intern</h4><span class="date">Jul – Aug 2025</span></div>
+        <div class="org">Haut-Lac International Bilingual School, Switzerland</div>
+        <ul>
+          <li>Reconciled and validated data across HubSpot (CRM) and Engage against source records, running audits and system tests to resolve inconsistencies and redundancies.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="top"><h4>IT Tech &amp; Data Migration Intern</h4><span class="date">May – Aug 2024</span></div>
+        <div class="org">Haut-Lac International Bilingual School, Switzerland</div>
+        <ul>
+          <li>Migrated 500+ student records between HubSpot and Engage, standardising formats and building report templates and secure extraction processes.</li>
+          <li>Trained staff on both systems and developed and debugged VBA macros to fix formatting issues and improve data integrity.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="top"><h4>Sheet Metal Worker Intern</h4><span class="date">May – Jun 2022</span></div>
+        <div class="org">Car-Point Carrosseries SA, Switzerland</div>
+        <ul>
+          <li>Assisted a senior technician with vehicle body repair (dent correction, panel replacement and post-repair alignment) to industry-standard methods, with zero additional damage.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-l">Education</div>
+      <div class="edu">
+        <div class="top"><h4>BEng (Hons) Mechanical Engineering</h4><span class="date">2024 – 2028</span></div>
+        <div class="org">University of Portsmouth, UK · On track for a First · IMechE-accredited</div>
+        <div class="grades">
+          <span class="grade-chip">Engineering Mathematics &amp; Numerical Analysis <b>97%</b></span>
+          <span class="grade-chip">Robotics &amp; Automation <b>84%</b></span>
+          <span class="grade-chip">Engineering Design <b>82%</b></span>
+          <span class="grade-chip">Solid Mechanics &amp; Dynamics <b>74%</b></span>
+          <span class="grade-chip">Thermodynamics &amp; Fluid Mechanics <b>70%</b></span>
+          <span class="grade-chip">Computer-Aided Engineering &amp; Manufacturing <b>68%</b></span>
+        </div>
+      </div>
+      <div class="edu">
+        <div class="top"><h4>IB Diploma</h4><span class="date">2017 – 2024</span></div>
+        <div class="org">Haut-Lac International Bilingual School, Switzerland</div>
+        <p><span class="lab">Higher Level:</span> Mathematics Analysis &amp; Approaches, Physics, Business Management.</p>
+        <p><span class="lab">Standard Level:</span> Computer Science, English Language &amp; Literature, French B.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-l">Certifications &amp; interests</div>
+      <div class="meta">
+        <div><span class="k">Certifications</span>First Aid (2023) · DELF B1 French (2021) · DELE A2 Spanish (2020)</div>
+        <div><span class="k">Interests</span>Cricket, University of Portsmouth CC (BUCS) · Personal robotics builds integrating mechanical design, electronics and control</div>
+      </div>
+    </div>
+
+    <div class="foot">References available on request · darsh.desai.pn@gmail.com · linkedin.com/in/ddpn</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darsh Desai | Mechanical Engineering Portfolio</title>
+<meta name="description" content="Mechanical engineering portfolio of Darsh Desai (University of Portsmouth). Projects across MATLAB, Simulink, PTC Creo and Fusion 360: stress analysis, control systems, path planning, design for manufacture, and a Mars rover build.">
+<meta name="author" content="Darsh Desai">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Darsh Desai | Mechanical Engineering Portfolio">
+<meta property="og:description" content="Engineering projects across MATLAB, Simulink, PTC Creo and Fusion 360: stress analysis, control systems, path planning, DFM, and a full-scale Mars rover build.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+:root{
+  --bg:#1B1C21; --surface:#25262C; --ink:#FAF9F5; --text2:#E4E2DA;
+  --cobalt:#D65F54; --cobalt-deep:#9A3730; --line:#3C3D45; --muted:#B6B4AB;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --disp:'Space Grotesk',sans-serif;
+  --body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background-color:var(--bg);background-image:linear-gradient(rgba(255,255,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.035) 1px,transparent 1px);background-size:46px 46px;color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* top bar */
+.topbar{border-bottom:1.5px solid var(--line);position:sticky;top:0;background:rgba(27,28,33,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:40}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:52px;font-family:var(--body);font-weight:500;font-size:13px;letter-spacing:0.5px}
+.topbar nav a{margin-left:18px;color:var(--muted);transition:color .15s}
+.topbar nav a:hover{color:var(--ink)}
+.topbar .brand{font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px}
+.avatar{width:28px;height:28px;border-radius:50%;object-fit:cover;border:1.5px solid var(--line)}
+@media(max-width:640px){.topbar nav{display:none}}
+
+/* header */
+header.hero{padding:72px 0 52px;text-align:center;position:relative;overflow:hidden}
+.hero>*{position:relative;z-index:2}
+.hero-spark{position:absolute;left:50%;top:56%;transform:translate(-50%,-50%);width:min(380px,74%);opacity:0.16;z-index:1;pointer-events:none}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:0.5px;color:var(--cobalt);margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:8px}
+.hero-note{font-size:16.5px;color:var(--text2);max-width:56ch;margin:24px auto 0;line-height:1.65}
+.sec-intro{font-size:16.5px;color:var(--text2);max-width:62ch;margin:-4px auto 26px;line-height:1.65;text-align:center}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--cobalt)}
+h1.name{font-family:var(--disp);font-weight:700;font-size:clamp(46px,9.5vw,92px);line-height:0.96;letter-spacing:-1px;text-transform:uppercase;color:var(--ink)}
+.role{font-family:var(--body);font-weight:500;font-size:15px;color:var(--muted);margin-top:14px}
+.role b{color:var(--ink);font-weight:700}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;font-weight:500;padding:10px 16px;border:2px solid var(--ink);background:transparent;color:var(--ink);box-shadow:3px 3px 0 var(--cobalt);transition:transform .12s,box-shadow .12s,background .12s,color .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--cobalt)}
+.btn.solid{background:var(--cobalt);color:#fff;border-color:var(--cobalt);box-shadow:3px 3px 0 var(--ink)}
+.btn.solid:hover{box-shadow:5px 5px 0 var(--ink)}
+.btn svg{width:16px;height:16px}
+.social-pill{display:inline-flex;align-items:center;gap:4px;margin:22px auto 0;padding:6px;background:var(--surface);border:1.5px solid var(--line);border-radius:999px}
+.social-pill a{display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center;border-radius:50%;color:var(--ink);transition:background .15s,color .15s}
+.social-pill a:hover{background:var(--cobalt);color:#fff}
+.social-pill svg{width:18px;height:18px}
+.hero-contact{font-family:var(--mono);font-size:12px;color:var(--text2);margin-top:24px;display:flex;flex-direction:column;align-items:center;gap:9px}
+.hero-contact .crow{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px}
+.hero-contact span,.hero-contact a{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.hero-contact svg{width:13px;height:13px;color:var(--cobalt);flex-shrink:0}
+.hero-contact a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:#5b5a52;transition:color .15s}
+.hero-contact a:hover{color:var(--cobalt);text-decoration-color:var(--cobalt)}
+.cc{font-family:var(--body);font-size:10px;font-weight:700;color:#fff;background:var(--cobalt);padding:1px 5px;border-radius:3px;letter-spacing:.5px}
+
+/* section label */
+.section{padding:54px 0;border-top:1.5px solid var(--line)}
+.sec-head{display:flex;flex-direction:column;align-items:center;gap:2px;margin-bottom:20px}
+.sec-num{font-family:var(--disp);font-weight:700;font-size:54px;line-height:1;color:var(--cobalt)}
+.sec-title{font-family:var(--disp);font-weight:700;font-size:30px;letter-spacing:-0.5px;color:var(--ink)}
+.sec-rule{display:none}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:2fr 1fr;gap:28px;align-items:start}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr}}
+.about p{font-size:17.5px;margin-bottom:14px;max-width:60ch;color:var(--text2);line-height:1.7}
+.photo{aspect-ratio:1;border:2px solid var(--line);box-shadow:5px 5px 0 var(--cobalt);display:flex;align-items:center;justify-content:center;color:#5a5a55;background:var(--surface);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:22px 32px;margin-top:34px;border-top:1.5px solid var(--line);padding-top:24px}
+@media(max-width:560px){.skills{grid-template-columns:1fr}}
+.skill-h{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:0.3px;color:var(--cobalt);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-family:var(--mono);font-size:12px;padding:4px 10px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink)}
+.meta-row{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:22px;border-top:1.5px solid var(--line);padding-top:18px;font-size:13px;color:var(--text2)}
+.meta-row .k{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:0.3px;color:var(--cobalt);display:block;margin-bottom:3px}
+
+/* timeline */
+.tl{position:relative;padding-left:28px}
+.tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl-item{position:relative;margin-bottom:22px}
+.tl-item:last-child{margin-bottom:0}
+.tl-group{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--cobalt);margin:0 0 18px -28px;padding-bottom:7px;border-bottom:1.5px solid var(--line)}
+.tl-group.edu{margin-top:38px}
+.tl-item::before{content:"";position:absolute;left:-28px;top:5px;width:12px;height:12px;background:var(--cobalt);border:2px solid var(--bg)}
+.tl-card{border:1.5px solid var(--line);background:var(--surface);box-shadow:4px 4px 0 var(--cobalt-deep);padding:16px 18px;transition:transform .12s,box-shadow .12s}
+.tl-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--cobalt)}
+.tl-item.now::before{width:17px;height:17px;top:2px;box-shadow:0 0 0 4px rgba(214,95,84,0.25)}
+.tl-item.now .tl-card{border:2px solid var(--cobalt);background:rgba(214,95,84,0.10);box-shadow:6px 6px 0 var(--cobalt);padding:22px 24px}
+.tl-item.now .tl-role{font-size:23px}
+.tl-item.now .tl-org{font-size:14.5px}
+.tl-item.now .tl-bullets li{font-size:16px}
+.tl-item.now .tl-badge{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
+.tl-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:6px}
+.tl-date{font-family:var(--mono);font-size:15px;font-weight:700;color:var(--cobalt)}
+.tl-badge{font-family:var(--mono);font-size:11px;letter-spacing:0.3px;border:1.5px solid var(--line);padding:2px 8px;color:var(--text2)}
+.tl-role{font-family:var(--disp);font-weight:700;font-size:18.5px;color:var(--ink)}
+.tl-org{font-family:var(--body);font-weight:500;font-size:13.5px;color:var(--muted);margin:2px 0 8px}
+.tl-bullets{list-style:none;margin:0;padding:0}
+.tl-bullets li{position:relative;padding-left:18px;font-size:15.5px;color:var(--text2);margin-bottom:7px;line-height:1.55}
+.tl-bullets li:last-child{margin-bottom:0}
+.tl-bullets li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;background:var(--cobalt)}
+
+/* projects */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{text-align:left;width:100%;border:1.5px solid var(--line);background:var(--surface);box-shadow:5px 5px 0 var(--cobalt-deep);padding:20px;cursor:pointer;display:flex;flex-direction:column;min-height:260px;transition:transform .12s,box-shadow .12s;font-family:var(--body)}
+.card:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--cobalt)}
+.proj-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
+.proj-icon{width:42px;height:42px;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--cobalt)}
+.proj-icon svg{width:22px;height:22px}
+.proj-grade{font-family:var(--mono);font-size:12px;font-weight:700;color:#fff;background:var(--cobalt);padding:3px 8px}
+.proj-cat{font-family:var(--body);font-weight:500;font-size:13px;letter-spacing:0.2px;color:var(--muted)}
+.proj-title{font-family:var(--disp);font-weight:700;font-size:21px;line-height:1.12;margin:6px 0 8px;color:var(--ink)}
+.proj-desc{font-size:14.5px;color:var(--text2);flex:1;line-height:1.55}
+.proj-open{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--cobalt);margin-top:16px;border-top:1.5px solid var(--line);padding-top:12px;display:flex;align-items:center;gap:6px}
+
+/* modal */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.72);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:50}
+.overlay.on{opacity:1;pointer-events:auto}
+.modal{background:var(--surface);border:2px solid var(--line);box-shadow:8px 8px 0 var(--cobalt-deep);max-width:680px;width:100%;max-height:86vh;overflow-y:auto;padding:26px}
+.modal-close{position:absolute;top:18px;right:18px;width:38px;height:38px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
+.modal-cat{font-family:var(--mono);font-size:12px;letter-spacing:0.3px;color:var(--cobalt);border:1.5px solid var(--cobalt);display:inline-block;padding:3px 9px;margin-bottom:12px}
+.modal-title{font-family:var(--disp);font-weight:700;font-size:26px;line-height:1.05;letter-spacing:-0.5px;padding-right:36px;color:var(--ink)}
+.modal-badge{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--cobalt);margin:8px 0 14px}
+.modal-info{font-size:15.5px;color:var(--text2);border-left:3px solid var(--cobalt);padding-left:14px;margin-bottom:22px;line-height:1.65}
+.modal-h{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:0.3px;margin-bottom:12px;display:flex;align-items:center;gap:7px;color:var(--ink)}
+.modal-h svg{width:16px;height:16px;color:var(--cobalt)}
+.carousel{position:relative;border:1.5px solid var(--line);background:var(--bg);overflow:hidden;margin-bottom:22px}
+.carousel-track{display:flex;transition:transform .35s ease}
+.carousel-track img{min-width:100%;width:100%;display:block;object-fit:contain;max-height:360px;background:var(--bg)}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border:1.5px solid var(--line);background:rgba(27,28,33,0.82);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;z-index:2}
+.car-btn:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
+.car-prev{left:8px}.car-next{right:8px}
+.car-count{position:absolute;top:8px;right:10px;font-family:var(--mono);font-size:11px;color:var(--text2);background:rgba(27,28,33,0.82);padding:2px 7px;z-index:2}
+.car-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:2}
+.car-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.45);border:none;cursor:pointer;padding:0}
+.car-dot.on{background:var(--cobalt)}
+.stack{border:1.5px solid var(--line);background:var(--bg);padding:16px;margin-bottom:22px}
+.tool-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:2px 18px}
+@media(max-width:520px){.tool-list{grid-template-columns:1fr}}
+.tool-list li{font-family:var(--mono);font-size:13px;padding:6px 0;border-bottom:1px solid var(--line);display:flex;gap:8px;align-items:flex-start;color:var(--text2)}
+.tool-list li::before{content:"›";color:var(--cobalt);font-weight:700}
+.steps{display:flex;flex-direction:column;gap:14px}
+.step{display:flex;gap:12px;font-size:15px;color:var(--text2);line-height:1.55}
+.step-n{flex-shrink:0;width:26px;height:26px;background:var(--cobalt);color:#fff;font-family:var(--mono);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+footer{border-top:1.5px solid var(--line);margin-top:48px;padding:26px 0;font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+
+/* highlights / key facts */
+.highlights{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 32px}
+@media(max-width:680px){.highlights{grid-template-columns:repeat(2,1fr)}}
+.stat{border:1.5px solid var(--line);background:var(--surface);border-top:3px solid var(--cobalt);padding:16px}
+.stat b{display:block;font-family:var(--disp);font-weight:700;font-size:30px;color:var(--ink);line-height:1}
+.stat span{display:block;font-size:12.5px;color:var(--text2);margin-top:7px;line-height:1.4}
+
+/* card outcome + secondary grade */
+.metric-badge{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--cobalt);border:1.5px solid var(--cobalt);padding:3px 8px;text-align:right;max-width:56%;line-height:1.25}
+.proj-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px;border-top:1.5px solid var(--line);padding-top:12px}
+.grade-note{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.proj-foot .proj-open{margin-top:0;border-top:none;padding-top:0}
+
+/* current work */
+.cur-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:680px){.cur-grid{grid-template-columns:1fr}}
+.cur-card{border:1.5px solid var(--line);background:var(--surface);border-left:3px solid var(--cobalt);padding:20px 22px}
+.cur-card .st{font-family:var(--mono);font-size:11.5px;font-weight:700;color:var(--cobalt);letter-spacing:0.3px;display:inline-flex;align-items:center;gap:6px}
+.cur-card h3{font-family:var(--disp);font-weight:700;font-size:19px;margin:8px 0 8px;color:var(--ink)}
+.cur-card p{font-size:14.5px;color:var(--text2);line-height:1.55}
+
+/* skills - RRT path */
+.skill-tree{max-width:880px;margin:0 auto}
+.tree-start{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--cobalt);text-align:center;margin-bottom:8px}
+.tree-root{width:max-content;max-width:100%;margin:0 auto;padding:12px 22px;border:2px solid var(--cobalt);background:var(--surface);font-family:var(--disp);font-weight:700;font-size:16px;color:var(--ink);display:flex;align-items:center;gap:9px;justify-content:center;text-align:center}
+.tree-root i{color:var(--cobalt);width:18px;height:18px}
+.tree-trunk{width:2px;height:26px;background:var(--cobalt);margin:0 auto}
+.tree-body{position:relative;background-image:radial-gradient(circle,rgba(214,95,84,0.32) 1.3px,transparent 1.7px);background-size:22px 22px}
+.tree-body::before{content:"";position:absolute;left:50%;top:0;bottom:6px;width:34px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='54' viewBox='0 0 34 54'%3E%3Cpath d='M17 0 L31 13 L4 27 L30 40 L17 54' fill='none' stroke='%23D65F54' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:repeat-y;background-position:center top;transform:translateX(-50%)}
+.tree-node{position:relative;width:calc(50% - 34px);margin-bottom:26px}
+.tree-node.right{margin-left:auto}
+.tree-node::before{content:"";position:absolute;top:26px;width:34px;height:2px;background:var(--cobalt)}
+.tree-node.left::before{right:-34px}
+.tree-node.right::before{left:-34px}
+.tree-node::after{content:"";position:absolute;top:21px;width:11px;height:11px;background:var(--cobalt);border:2px solid var(--bg);transform:rotate(45deg)}
+.tree-node.left::after{right:-40px}
+.tree-node.right::after{left:-40px}
+.tree-card{border:1.5px solid var(--line);background:var(--surface);padding:16px 18px}
+.tree-card .skill-h{margin-bottom:10px}
+.tree-goal{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:-4px}
+.goal-mark{width:18px;height:18px;border:2px solid var(--cobalt);border-radius:50%;position:relative;background:var(--bg);z-index:1}
+.goal-mark::before{content:"";position:absolute;inset:3px;background:var(--cobalt);border-radius:50%}
+.goal-label{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted)}
+@media(max-width:640px){
+  .tree-body::before{left:6px;width:3px;background-image:none;background:var(--cobalt);transform:none}
+  .tree-node,.tree-node.right{width:auto;margin:0 0 22px 34px}
+  .tree-node.left::before,.tree-node.right::before{left:-28px;right:auto;width:28px}
+  .tree-node.left::after,.tree-node.right::after{left:-34px;right:auto}
+  .tree-goal{align-items:flex-start;margin-left:-3px}
+}
+
+/* skills - organic tree */
+.skilltree{position:relative;max-width:900px;margin:0 auto;aspect-ratio:800/760}
+.skilltree svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.leaf{position:absolute;max-width:238px;z-index:2;background:rgba(27,28,33,0.9);border:1px solid var(--line);border-radius:8px;padding:10px 13px}
+.leaf-h{font-family:var(--disp);font-weight:700;font-size:17px;color:var(--ink);margin-bottom:5px}
+.leaf-tags{font-size:13px;line-height:1.55;color:var(--text2)}
+.leaf.l{text-align:right}
+.skill-list{display:none}
+@media(max-width:760px){
+  .skilltree{display:none}
+  .skill-list{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px}
+  .skill-list .skill-h{margin-bottom:8px}
+}
+@media(max-width:480px){.skill-list{grid-template-columns:1fr}}
+
+/* accessibility */
+a:focus-visible,button:focus-visible,.card:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="brand"><img class="avatar" src="darsh.jpg" alt="" onerror="this.style.visibility='hidden'">Darsh Desai</span>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">Robotics · Automation · Intelligent manufacturing</div>
+    <h1 class="name">Darsh Desai</h1>
+    <div class="hero-contact">
+      <div class="crow">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> <span>Portsmouth, UK &amp; St. Légier, CH</span></span>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn" href="mailto:darsh.desai.pn@gmail.com"><i data-lucide="mail"></i> <span>Get in touch</span></a>
+      <a class="btn" href="Darsh-Desai-CV.pdf" target="_blank" rel="noopener"><i data-lucide="file-text"></i> <span>View CV (PDF)</span></a>
+    </div>
+    <div class="social-pill">
+      <a href="https://github.com/dpndesai11" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+      <a href="https://www.linkedin.com/in/ddpn/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+    </div>
+  </header>
+
+  <section class="section" id="about" style="border-top:none">
+    <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">About</h2><span class="sec-rule"></span></div>
+
+    <div class="about-grid">
+      <div class="about">
+        <p>I build things that move, sense and think. I'm a mechanical engineer working at the intersection of robotics, automation and intelligent manufacturing, where mechanical design meets control, sensing and autonomy.</p>
+        <p>I led a 30-person team building a programmable Mars rover and secured funding to start a LiDAR navigation robot. I've written an RRT path planner for a nonholonomic robot, modelled ECU-based ABS control in Simulink, and turned solid-mechanics theory into a validated MATLAB tool that scored 100%. I care about designs that survive contact with reality, so I build, test, refine, and document what breaks.</p>
+      </div>
+      <div class="photo">
+        <img src="darsh.jpg" alt="Portrait of Darsh Desai" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <i data-lucide="user" style="width:48px;height:48px;display:none" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <div style="border-top:1.5px solid var(--line);margin-top:32px;padding-top:26px">
+      <div class="skill-h" style="margin-bottom:12px"><i data-lucide="compass" style="width:15px;height:15px" aria-hidden="true"></i> <span>Engineering interests</span></div>
+      <div class="tags" style="margin-bottom:20px">
+        <span class="tag">Autonomous systems</span><span class="tag">Motion planning</span><span class="tag">Control systems</span><span class="tag">Mechatronics</span><span class="tag">Intelligent manufacturing / Industry 4.0</span><span class="tag">Design for manufacture</span><span class="tag">Additive manufacturing</span>
+      </div>
+      <div class="meta-row">
+        <div><span class="k">Certifications</span><span>First Aid (2023) · DELF B1 French (2021)</span></div>
+        <div><span class="k">Beyond engineering</span><span>Cricket, Portsmouth CC (BUCS) · Personal robotics builds</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Skills</h2><span class="sec-rule"></span></div>
+    <p class="sec-intro">Skills mapped as a tree: a robotics-rooted trunk branching into my engineering disciplines, weighted toward robotics, automation and electromechanical systems.</p>
+    <div class="skilltree">
+      <svg viewBox="0 0 800 760" preserveAspectRatio="xMidYMid meet" role="img" aria-label="A bare tree whose branches lead to each engineering discipline." xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#9A3730" stroke-width="1.4" stroke-linecap="round">
+          <ellipse cx="400" cy="706" rx="64" ry="11"/>
+          <ellipse cx="400" cy="706" rx="34" ry="6"/>
+          <path d="M300 706 C262 703 232 706 208 710"/>
+          <path d="M500 706 C538 703 568 706 592 710"/>
+        </g>
+        <g fill="none" stroke="#C24A42" stroke-width="2.4" stroke-linecap="round">
+          <path d="M393 702 C398 600 396 490 399 410 C400 388 399 372 400 360"/>
+          <path d="M407 702 C403 600 405 490 402 410 C401 388 402 372 400 360"/>
+          <path d="M400 700 C401 620 400 510 400 430"/>
+        </g>
+        <g fill="none" stroke="#D65F54" stroke-width="1.7" stroke-linecap="round">
+          <path d="M400 360 C374 322 348 250 318 156"/>
+          <path d="M356 248 C336 240 322 248 306 240"/>
+          <path d="M340 200 C356 196 366 204 380 198"/>
+          <path d="M400 360 C398 300 404 232 400 176"/>
+          <path d="M400 250 C388 244 380 250 372 244"/>
+          <path d="M401 362 C430 324 464 250 500 170"/>
+          <path d="M468 240 C484 232 498 240 510 230"/>
+          <path d="M398 402 C330 376 250 350 180 332"/>
+          <path d="M272 360 C258 372 244 372 230 382"/>
+          <path d="M402 402 C486 376 566 360 626 350"/>
+          <path d="M540 366 C556 378 570 378 584 388"/>
+          <path d="M400 432 C334 454 270 486 230 505"/>
+          <path d="M300 470 C286 484 288 496 278 508"/>
+          <path d="M400 436 C472 458 546 500 598 520"/>
+          <path d="M522 494 C536 508 534 518 546 528"/>
+          <path d="M360 300 C346 294 338 302 328 296"/>
+          <path d="M440 300 C454 294 462 302 472 296"/>
+        </g>
+        <g fill="#D65F54">
+          <circle cx="318" cy="156" r="4.5"/><circle cx="500" cy="170" r="4.5"/><circle cx="180" cy="332" r="4.5"/>
+          <circle cx="626" cy="350" r="4.5"/><circle cx="230" cy="505" r="4.5"/><circle cx="598" cy="520" r="4.5"/>
+        </g>
+      </svg>
+      <div class="leaf l" style="right:60.6%;top:19.7%;transform:translate(-20px,-50%)">
+        <div class="leaf-h">Robotics &amp; Automation</div>
+        <div class="leaf-tags">Path planning (RRT / Dubins) · Autonomous mobile robots · Control systems</div>
+      </div>
+      <div class="leaf r" style="left:62.5%;top:21.7%;transform:translate(20px,-50%)">
+        <div class="leaf-h">Mechanical Design</div>
+        <div class="leaf-tags">PTC Creo · Fusion 360 · AutoCAD · Onshape · Geometric Dimensioning &amp; Tolerancing · DFM</div>
+      </div>
+      <div class="leaf l" style="right:77.5%;top:43.7%;transform:translate(-20px,-50%)">
+        <div class="leaf-h">Simulation &amp; Analysis</div>
+        <div class="leaf-tags">MATLAB · Simulink · FEA · Mould-flow · SFD / BMD analysis</div>
+      </div>
+      <div class="leaf r" style="left:78.25%;top:46.1%;transform:translate(20px,-50%)">
+        <div class="leaf-h">Manufacturing</div>
+        <div class="leaf-tags">3D printing (FDM) · Injection moulding &amp; tooling · CAM / CNC · Laser cutting</div>
+      </div>
+      <div class="leaf l" style="right:71.25%;top:66.4%;transform:translate(-20px,-50%)">
+        <div class="leaf-h">Programming</div>
+        <div class="leaf-tags">MATLAB · Python · VBA · MS Excel</div>
+      </div>
+      <div class="leaf r" style="left:74.75%;top:68.4%;transform:translate(20px,-50%)">
+        <div class="leaf-h">Leadership</div>
+        <div class="leaf-tags">30-person team leadership · Project management · Onboarding · Stakeholder alignment</div>
+      </div>
+    </div>
+
+    <div class="skill-list">
+      <div><div class="skill-h"><i data-lucide="cpu" style="width:15px;height:15px" aria-hidden="true"></i> <span>Robotics &amp; Automation</span></div><div class="tags"><span class="tag">Path planning (RRT / Dubins)</span><span class="tag">Autonomous mobile robots</span><span class="tag">Control systems</span></div></div>
+      <div><div class="skill-h"><i data-lucide="box" style="width:15px;height:15px" aria-hidden="true"></i> <span>Mechanical Design</span></div><div class="tags"><span class="tag">PTC Creo</span><span class="tag">Fusion 360</span><span class="tag">AutoCAD</span><span class="tag">Onshape</span><span class="tag">Geometric Dimensioning &amp; Tolerancing</span><span class="tag">DFM</span></div></div>
+      <div><div class="skill-h"><i data-lucide="activity" style="width:15px;height:15px" aria-hidden="true"></i> <span>Simulation &amp; Analysis</span></div><div class="tags"><span class="tag">MATLAB</span><span class="tag">Simulink</span><span class="tag">FEA</span><span class="tag">Mould-flow analysis</span><span class="tag">SFD / BMD</span></div></div>
+      <div><div class="skill-h"><i data-lucide="printer" style="width:15px;height:15px" aria-hidden="true"></i> <span>Manufacturing</span></div><div class="tags"><span class="tag">3D printing (FDM)</span><span class="tag">Injection moulding &amp; tooling</span><span class="tag">CAM / CNC</span><span class="tag">Laser cutting</span></div></div>
+      <div><div class="skill-h"><i data-lucide="code" style="width:15px;height:15px" aria-hidden="true"></i> <span>Programming</span></div><div class="tags"><span class="tag">MATLAB</span><span class="tag">Python</span><span class="tag">VBA</span><span class="tag">MS Excel</span></div></div>
+      <div><div class="skill-h"><i data-lucide="users" style="width:15px;height:15px" aria-hidden="true"></i> <span>Leadership</span></div><div class="tags"><span class="tag">30-person team leadership</span><span class="tag">Project &amp; timeline management</span><span class="tag">Onboarding &amp; training</span><span class="tag">Stakeholder alignment</span></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Projects</h2><span class="sec-rule"></span></div>
+    <p class="sec-intro">University coursework and personal builds across robotics, control, mechanical design and design for manufacture. Select any project to see the tools, grade and approach.</p>
+    <div class="proj-grid" id="proj-grid"></div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Experience</h2><span class="sec-rule"></span></div>
+    <p class="sec-intro">Work experience first, education below, each most recent at the top.</p>
+    <div class="tl">
+      <div class="tl-group">Work</div>
+      <div class="tl-item"><div class="tl-card">
+        <div class="tl-top"><span class="tl-date">Sep 2025 – Jul 2026</span><span class="tl-badge">Club leadership</span></div>
+        <h3 class="tl-role">Manufacturing Club Lead</h3>
+        <div class="tl-org">University of Portsmouth, UK</div>
+        <ul class="tl-bullets">
+          <li>Led a 30-member, multidisciplinary team building a programmable Mars rover replica across mechanical, electrical and integration workstreams.</li>
+          <li>Secured university funding and institutional clearance to launch a LiDAR navigation robot.</li>
+          <li>Ran Creo and Bambu Studio onboarding and load-tested 3D-printed parts before committing to final builds, reducing print failures.</li>
+        </ul>
+      </div></div>
+      <div class="tl-item"><div class="tl-card">
+        <div class="tl-top"><span class="tl-date">Aug – Sep 2025</span><span class="tl-badge">Internship</span></div>
+        <h3 class="tl-role">IT Industrialisation Intern</h3>
+        <div class="tl-org">Philip Morris International · Lausanne, Switzerland</div>
+        <ul class="tl-bullets">
+          <li>Worked in the department responsible for launching factories and digitally integrating production systems.</li>
+          <li>Documented the end-to-end G0–G7 project lifecycle in a reusable "Ways of Working" playbook.</li>
+          <li>Redesigned the team's Confluence (Atlassian) workspace, improving documentation searchability and template consistency.</li>
+        </ul>
+      </div></div>
+      <div class="tl-item"><div class="tl-card">
+        <div class="tl-top"><span class="tl-date">Jul – Aug 2025</span><span class="tl-badge">Internship</span></div>
+        <h3 class="tl-role">Data Quality &amp; Integration Intern</h3>
+        <div class="tl-org">Haut-Lac International Bilingual School · Saint-Légier, Switzerland</div>
+        <ul class="tl-bullets">
+          <li>Reconciled and validated data across two systems (HubSpot CRM and Engage) against source records.</li>
+          <li>Ran audits and system tests to identify and resolve inconsistencies and redundancies.</li>
+        </ul>
+      </div></div>
+      <div class="tl-item"><div class="tl-card">
+        <div class="tl-top"><span class="tl-date">May – Aug 2024</span><span class="tl-badge">Internship</span></div>
+        <h3 class="tl-role">IT Tech &amp; Data Migration Intern</h3>
+        <div class="tl-org">Haut-Lac International Bilingual School · Saint-Légier, Switzerland</div>
+        <ul class="tl-bullets">
+          <li>Migrated 500+ student records between HubSpot and Engage with standardised data formats.</li>
+          <li>Built report templates and secure extraction processes, trained staff, and debugged VBA macros to improve data integrity.</li>
+        </ul>
+      </div></div>
+      <div class="tl-item"><div class="tl-card">
+        <div class="tl-top"><span class="tl-date">May – Jun 2022</span><span class="tl-badge">Internship</span></div>
+        <h3 class="tl-role">Sheet Metal Worker Intern</h3>
+        <div class="tl-org">Car-Point Carrosseries SA, Switzerland</div>
+        <ul class="tl-bullets">
+          <li>Assisted vehicle body repair: dent correction, panel replacement and post-repair alignment.</li>
+          <li>Worked to industry-standard methods and workshop safety, with zero additional damage during handling.</li>
+        </ul>
+      </div></div>
+      <div class="tl-group edu">Education</div>
+      <div class="tl-item now"><div class="tl-card">
+        <div class="tl-top"><span class="tl-date">2024 – 2028</span><span class="tl-badge">Ongoing · On track for a 1st · IMechE</span></div>
+        <h3 class="tl-role">BEng (Hons) Mechanical Engineering</h3>
+        <div class="tl-org">University of Portsmouth, UK</div>
+        <ul class="tl-bullets">
+          <li>On-track first-class classification on an IMechE-accredited degree.</li>
+          <li><b>Year 2 (average 79%):</b> Engineering Mathematics &amp; Numerical Analysis 97%, Robotics &amp; Automation 84%, Engineering Design 82%, Solid Mechanics &amp; Dynamics 74%, Thermodynamics &amp; Fluid Mechanics 70%, Computer-Aided Engineering &amp; Product Manufacture 68%.</li>
+          <li><b>Year 1 (average 70%):</b> Introduction to Thermodynamics &amp; Fluid Mechanics 83%, Introduction to Materials &amp; Manufacture 83%, Introduction to Design 70%, Mathematical Principles 67%, Electrical &amp; Electronic Principles 62%, Introduction to Solid Mechanics &amp; Dynamics 56%.</li>
+        </ul>
+      </div></div>
+      <div class="tl-item"><div class="tl-card">
+        <div class="tl-top"><span class="tl-date">2017 – 2024</span><span class="tl-badge">Education</span></div>
+        <h3 class="tl-role">IB Diploma</h3>
+        <div class="tl-org">Haut-Lac International Bilingual School, Switzerland</div>
+        <ul class="tl-bullets">
+          <li>Higher Level: Mathematics Analysis &amp; Approaches, Physics, Business Management.</li>
+          <li>Standard Level: Computer Science, English Language &amp; Literature, French B.</li>
+        </ul>
+      </div></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <span>© 2026 Darsh Desai</span>
+  <span>Built &amp; designed by Darsh Desai</span>
+</footer>
+
+<div class="overlay" id="overlay">
+  <div class="modal" id="modal" style="position:relative" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" onclick="closeProject()" aria-label="Close project details"><i data-lucide="x" aria-hidden="true"></i></button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script>
+const projectDatabase = {
+  rover:{icon:"bot",cat:"Robotics & Systems",card:"Mars Rover Replica",grade:"CLUB LEAD",
+    images:["rover-1.jpeg","rover-2.jpeg","rover-3.jpeg"],
+    cardDesc:"Led the full assembly of a full-scale programmable rover within a large team, taking client CAD designs to a load-tested mechanical build.",
+    title:"Programmable Mars Rover Replica",category:"Leadership & Robotics",badge:"Mechanical Assembly Complete · Next Phase: Electrical & Programming",
+    info:"Led the full assembly of a programmable Mars rover replica within a large, multidisciplinary team, taking it from client CAD designs through to a validated mechanical build. Mechanical assembly is complete, with the next phase moving into electrical integration and programming.",
+    tools:["PTC Creo CAD","3D Printing (Bambu Studio)","Prototype Manufacturing","Part Orientation Optimisation","Structural / Load Testing","Team Onboarding & Coordination"],
+    steps:["Led the full assembly of a programmable rover within a large team, coordinating the build to project deadlines.","Manufacturing: manufactured prototypes from client CAD designs, adjusting part orientation to improve print reliability.","Structural validation: stress-tested mechanical components under a physical load and redesigned weak areas to ensure structural integrity.","Leadership: onboarded team members in CAD and 3D-printing workflows and coordinated tasks across the team to meet project deadlines."]},
+  stress:{icon:"activity",cat:"Solid Mechanics",card:"Bridge Stress Analysis App",grade:"100%",
+    cardDesc:"Interactive MATLAB tool analysing a simply supported bridge under Tandem and Lorry load cases, computing reactions plus shear and bending diagrams.",
+    title:"Bridge Stress Analysis App",category:"Solid Mechanics & Simulation",badge:"Coursework Grade: 100% (First Class)",
+    info:"A fully functional MATLAB application that analyses the structural behaviour of bridge beams under variable loading conditions across two scenarios, the Tandem and Lorry systems. The user inputs loading parameters and the application automatically computes and outputs shear force and bending moment distributions with no further interaction. A comprehensive validation layer, sanity checks and constraint verifications, flags inconsistent or out-of-range outputs before they reach the user, treating reliability as a non-negotiable requirement. The App Designer interface mirrors how an engineer naturally reasons through the problem: inputs first, visualised outputs second.",
+    images:["stress-1.jpg","stress-2.jpg"],
+    tools:["MATLAB Computing Engine","MATLAB App Designer GUI","Automated Calculation Pipeline","Shear Force & Bending Moment Solvers","Validation & Constraint Checks","Tandem & Lorry Load Modelling"],
+    steps:["Translated the theoretical mechanics of beam stress analysis into a reliable, automated software tool.","Derived piecewise shear force and bending moment equations and engineered a full calculation pipeline from user-input loading parameters with no manual steps.","Built input validation and constraint checks that flag inconsistent or out-of-range values before they reach the user.","Designed the App Designer interface with interactive force diagrams, keeping the tool accessible without touching the underlying code.","Simulated two vehicle loading scenarios and verified the tool against calibration test cases to secure a perfect 100% grade."]},
+  rrt:{icon:"navigation",cat:"Robotics & Automation",card:"RRT Path Planning",grade:"88%",
+    images:["rrt-1.jpg"],
+    cardDesc:"Dubins-based RRT planner for a nonholonomic robot in MATLAB, with a two-stage optimisation pipeline for shorter, collision-free paths.",
+    title:"RRT Path Planning",category:"Robotics & Automation",badge:"Coursework Grade: 88% (First Class)",
+    info:"An RRT path planner in MATLAB built on a Dubins state space to produce collision-free paths for a nonholonomic robot in a constrained office environment. I designed my own occupancy maps to test robustness across multiple environments, then developed a two-stage optimisation pipeline (custom greedy shortcutting with adaptive constraints, followed by built-in smoothing) to shorten the paths while preserving clearance from obstacles.",
+    tools:["MATLAB","Rapidly-exploring Random Trees (RRT)","Dubins State Space","Greedy Shortcutting (Adaptive Constraints)","Spline Path Smoothing","Collision Checking"],
+    steps:["Programmed an RRT planner over a Dubins state space, generating feasible paths for a nonholonomic robot amid office obstacles.","Designed custom occupancy maps to verify robustness across multiple distinct environments, not just one tuned scenario.","Applied custom greedy shortcutting with adaptive constraints to remove redundant waypoints and compress path length.","Followed with built-in smoothing to produce collision-free, drivable paths that keep clearance from obstacles.","Delivered the planner to a first-class standard, earning an 88% grade."]},
+  gearbox:{icon:"settings",cat:"Mechanical Design",card:"Multi-Stage Gearbox",grade:"81%",
+    images:[],
+    cardDesc:"Costed gearbox for a 35 kW shipborne drive: belt, gear, shaft and bearing calculations from first principles against a 22,500-hour life target.",
+    title:"Multi-Stage Gearbox",category:"Mechanical Power Transmission",badge:"Coursework Grade: 81% (First Class)",
+    info:"Working with a partner, I designed a 3:1 speed-increase gearbox for a 35 kW shipborne drive system, balancing performance against cost. We selected components from industry catalogues (Fenner, HPC, SKF) and performed belt, gear, shaft, bearing and fits calculations from first principles, producing a fully costed design ready for a detailed design and procurement phase.",
+    tools:["Belt, Gear, Shaft & Bearing Design","Industry Catalogues (Fenner, HPC, SKF)","Service Factors & Stress/Wear Analysis","L10h Bearing Life Calculations","H7/k6 Fits & Cylindricity Tolerances","Costed 100-Unit Production Design"],
+    steps:["Designed a 3:1 speed-increase gearbox for a 35 kW shipborne drive system, meeting the client's performance objectives against cost constraints.","Selected belts, gears, shafts and bearings from industry catalogues (Fenner, HPC, SKF), sizing every component from first principles.","Applied service factors and stress/wear analysis, and ran L10h life calculations to meet a 22,500-hour service target.","Specified H7/k6 fits with cylindricity tolerances for reliable assembly and running clearance.","Produced a fully costed design for a 100-unit run (£18,805), achieving an 81% grade in a two-person team."]},
+  mould:{icon:"package",cat:"Design for Manufacture",card:"Injection-Moulded Bowl",grade:"71%",
+    images:["bowl-1.jpg","bowl-2.jpg","bowl-3.jpg","bowl-4.jpg"],
+    cardDesc:"Food-safe children's bowl from concept to two-part mould and a CNC-simulated machining plan in PTC Creo, comparing PP and PETG.",
+    title:"Injection-Moulded Bowl",category:"Design for Manufacture (DFM)",badge:"Coursework Grade: 71% (First Class)",
+    info:"A children's food-safe bowl designed in Creo for mass production via injection moulding, taken from concept through to tooling design and a validated CNC machining strategy. I optimised the geometry for material flow, ran iterative mould analysis to eliminate defects, selected a suitable polymer, and planned and simulated the mould's manufacture, producing a complete, handover-ready package rather than stopping at part geometry.",
+    tools:["PTC Creo Parametric","3° Draft Angles & Flow Radii","Mould Analysis (PP vs PETG)","Two-Part Mould, 2% Shrinkage","10-Sequence CNC Programme","Creo NC Simulation (Hurco BX60)"],
+    steps:["Designed a children's food-safe bowl in Creo with 3° draft angles and radii optimised for material flow.","Ran iterative mould analysis comparing PP and PETG, eliminating weld lines and air traps between design versions.","Selected PP for its impact toughness and recyclability, meeting food-safe and durability requirements.","Designed a two-part mould with a 2% shrinkage allowance for accurate finished dimensions.","Planned a 10-sequence CNC programme for the Hurco BX60 and validated it via Creo NC simulation, earning a 71% grade."]},
+  backpack:{icon:"shopping-bag",cat:"Product Design",card:"Modular Expandable Bag",grade:"82%",
+    images:["bag-1.jpg","bag-2.jpg","bag-3.jpg"],
+    cardDesc:"Led concept selection via Pugh matrix and designed a spring-loaded, tool-free modular attachment mechanism in Fusion 360.",
+    title:"Modular Expandable Bag",category:"Product Design & Optimization",badge:"Coursework Grade: 82% (First Class)",
+    info:"Within a four-person team, I helped design a modular, expandable commuter bag built around interchangeable attachments so a single bag adapts to different use cases. I led concept selection using a structured Pugh matrix and designed and championed a spring-loaded modular attachment mechanism, chosen for its tool-free assembly and structural reliability. I then took full ownership of that mechanism's manufacture and assembly, validating it against load-bearing and usability criteria.",
+    tools:["Autodesk Fusion 360","Pugh Concept Matrix","Spring-Loaded Modular Mechanism","Tool-Free Assembly","Design for Manufacture (CNC)","Load-Bearing & Usability Validation"],
+    steps:["Led concept selection using a structured Pugh matrix, weighing design directions against user and functional criteria.","Designed and championed a spring-loaded modular attachment mechanism for tool-free assembly and structural reliability.","Took full ownership of the mechanism's manufacture and assembly within the four-person team.","Validated performance against load-bearing and usability criteria across different configurations.","Applied DFM principles to optimise the geometry for CNC production, earning an 82% grade."]},
+  abs:{icon:"gauge",cat:"Control Systems",card:"ABS Quarter-Car Model",grade:"78%",
+    images:["abs-1.jpg","abs-2.jpg","abs-3.jpg"],
+    cardDesc:"Simulink quarter-car ABS model using bang-bang control with a hysteresis band, plus an ECU/PLC controller trade study.",
+    title:"ABS Quarter-Car Model",category:"Control Systems & Simulation",badge:"Coursework Grade: 78% (First Class)",
+    info:"A control-system analysis and Simulink model of an Anti-lock Braking System (ABS). I evaluated ECU, PLC and industrial-computer architectures for ABS control, recommending an ECU-based embedded controller for its real-time slip-ratio computation and direct hydraulic actuator command without OS latency. I then modelled a quarter-car ABS system in MATLAB Simulink using bang-bang relay control with a hysteresis band to hold wheel slip at the optimal threshold, reproducing the characteristic sawtooth braking behaviour.",
+    tools:["MATLAB Simulink","Controller Architecture Trade Study (ECU / PLC)","Quarter-Car Vehicle Dynamics","Bang-Bang Relay Control","Hysteresis Band Tuning","Wheel Slip Ratio Control"],
+    steps:["Evaluated ECU, PLC and industrial-computer architectures for ABS control against real-time and latency requirements.","Recommended an ECU-based embedded controller for real-time slip-ratio computation and direct hydraulic actuator command without OS latency.","Modelled a quarter-car ABS system in MATLAB Simulink to study brake control dynamics under realistic conditions.","Implemented bang-bang relay control with a hysteresis band to maintain wheel slip at the optimal threshold.","Reproduced the characteristic sawtooth braking behaviour and validated the strategy, earning a 78% grade."]}
+};
+
+
+const order = ["rover","rrt","abs","stress","gearbox","backpack","mould"];
+const overlay=document.getElementById('overlay');
+const modalContent=document.getElementById('modal-content');
+
+function renderGrid(){
+  const grid=document.getElementById('proj-grid');
+  grid.innerHTML=order.map(k=>{const p=projectDatabase[k];const g=p.grade;const gd=g.includes('%')?'Grade: '+g:g;return `
+  <button class="card" onclick="openProject('${k}')" aria-label="Open ${p.card}">
+    <div class="proj-top">
+      <span class="proj-icon"><i data-lucide="${p.icon}"></i></span>
+      <span class="proj-grade">${gd}</span>
+    </div>
+    <span class="proj-cat">${p.cat}</span>
+    <h3 class="proj-title">${p.card}</h3>
+    <p class="proj-desc">${p.cardDesc}</p>
+    <span class="proj-open">Open ↗</span>
+  </button>`;}).join('');
+  if(window.lucide)lucide.createIcons();
+}
+renderGrid();
+
+function openProject(key){
+  const p=projectDatabase[key];if(!p)return;
+  const H={img:'Images',stack:'Technical stack',proc:'Design decisions, validation & optimisation',prev:'Previous image',next:'Next image',lbl:'Image'};
+  const multi=p.images&&p.images.length>1;
+  const imgs=(p.images&&p.images.length)?`
+    <div class="modal-h"><i data-lucide="image"></i> ${H.img}</div>
+    <div class="carousel">
+      <div class="carousel-track" id="carousel-track">${p.images.map(s=>`<img src="${s}" alt="${p.card} ${H.lbl.toLowerCase()}" loading="lazy">`).join('')}</div>
+      ${multi?`<button class="car-btn car-prev" onclick="carGo(-1)" aria-label="${H.prev}">&#8249;</button>
+      <button class="car-btn car-next" onclick="carGo(1)" aria-label="${H.next}">&#8250;</button>
+      <span class="car-count"></span>
+      <div class="car-dots">${p.images.map((_,i)=>`<button class="car-dot${i===0?' on':''}" onclick="carSet(${i})" aria-label="${H.lbl} ${i+1}"></button>`).join('')}</div>`:''}
+    </div>`:'';
+  const tools=p.tools.map(t=>`<li>${t}</li>`).join('');
+  const steps=p.steps.map((s,i)=>`<div class="step"><span class="step-n">${i+1}</span><span>${s}</span></div>`).join('');
+  modalContent.innerHTML=`
+    <span class="modal-cat">${p.category}</span>
+    <h2 class="modal-title" id="modal-title">${p.title}</h2>
+    <div class="modal-badge">${p.badge}</div>
+    <p class="modal-info">${p.info}</p>
+    ${imgs}
+    <div class="modal-h"><i data-lucide="cpu" aria-hidden="true"></i> ${H.stack}</div>
+    <div class="stack"><ul class="tool-list">${tools}</ul></div>
+    <div class="modal-h"><i data-lucide="git-branch" aria-hidden="true"></i> ${H.proc}</div>
+    <div class="steps">${steps}</div>`;
+  overlay.classList.add('on');
+  carIndex=0;carLen=(p.images&&p.images.length)||0;carRender();
+  modalContent.scrollTop=0;
+  lastFocus=document.activeElement;
+  const closeBtn=overlay.querySelector('.modal-close');
+  if(closeBtn)closeBtn.focus();
+  if(window.lucide)lucide.createIcons();
+}
+let lastFocus=null,carIndex=0,carLen=0;
+function carRender(){
+  const track=document.getElementById('carousel-track');
+  if(!track||!carLen)return;
+  track.style.transform=`translateX(${-carIndex*100}%)`;
+  document.querySelectorAll('.car-dot').forEach((d,i)=>d.classList.toggle('on',i===carIndex));
+  const cnt=document.querySelector('.car-count');
+  if(cnt)cnt.textContent=`${carIndex+1} / ${carLen}`;
+}
+function carGo(dir){if(!carLen)return;carIndex=(carIndex+dir+carLen)%carLen;carRender();}
+function carSet(i){carIndex=i;carRender();}
+function closeProject(){overlay.classList.remove('on');if(lastFocus&&lastFocus.focus)lastFocus.focus();}
+overlay.addEventListener('click',e=>{if(e.target===overlay)closeProject();});
+document.addEventListener('keydown',e=>{
+  if(!overlay.classList.contains('on'))return;
+  if(e.key==='Escape')closeProject();
+  else if(e.key==='ArrowRight'&&carLen>1)carGo(1);
+  else if(e.key==='ArrowLeft'&&carLen>1)carGo(-1);
+});
+if(window.lucide)lucide.createIcons();
+
+</script>
+</body>
+</html>
