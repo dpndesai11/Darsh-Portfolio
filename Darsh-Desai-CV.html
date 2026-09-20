@@ -17,10 +17,10 @@
 body{background:#3a3b40;font-family:var(--body);color:var(--ink);line-height:1.45;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 .sheet{width:210mm;min-height:297mm;background:var(--paper);margin:16px auto;box-shadow:0 6px 30px rgba(0,0,0,.4);position:relative;overflow:hidden}
-.pad{padding:11mm 15mm 9mm}
+.pad{padding:8mm 15mm 6mm}
 
 /* header band */
-.band{background:var(--band);color:#F6F5F1;padding:10mm 15mm 8mm;position:relative;text-align:center}
+.band{background:var(--band);color:#F6F5F1;padding:8mm 15mm 6.5mm;position:relative;text-align:center}
 .band::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--accent)}
 .eyebrow{font-family:var(--mono);font-size:9.5pt;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
 .name{font-family:var(--disp);font-weight:700;font-size:30pt;line-height:1;letter-spacing:-.5px;text-transform:uppercase}
@@ -33,9 +33,9 @@ a{color:inherit;text-decoration:none}
 .cc{font-family:var(--body);font-size:7pt;font-weight:700;color:#1B1C21;background:var(--accent);padding:1px 4px;border-radius:2px;letter-spacing:.5px}
 
 /* sections */
-.sec{margin-top:12px}
+.sec{margin-top:8px}
 .sec:first-child{margin-top:0}
-.sec-l{font-family:var(--mono);font-size:9.5pt;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-deep);display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.sec-l{font-family:var(--mono);font-size:9.5pt;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-deep);display:flex;align-items:center;gap:9px;margin-bottom:6px}
 .sec-l::after{content:"";flex:1;height:2px;background:var(--line)}
 p.lead{font-size:10pt;color:#000;line-height:1.46;text-align:justify}
 
@@ -46,42 +46,42 @@ p.lead{font-size:10pt;color:#000;line-height:1.46;text-align:justify}
 .sk .v{color:#000}
 
 /* projects grid */
-.projs{display:grid;grid-template-columns:1fr 1fr;gap:8px 22px}
+.projs{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px}
 .proj{border-left:2.5px solid var(--accent);padding-left:11px}
 .proj .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
 .proj h4{font-family:var(--disp);font-weight:700;font-size:10.6pt;line-height:1.15;color:var(--ink)}
 .proj .grade{font-family:var(--mono);font-size:8.3pt;font-weight:700;color:#fff;background:var(--accent);padding:1.5px 6px;white-space:nowrap;flex-shrink:0}
 .proj .tools{font-family:var(--mono);font-size:8pt;color:var(--faint);margin:2px 0 3px}
-.proj p{font-size:9.3pt;color:#000;line-height:1.4;text-align:justify}
+.proj p{font-size:9.1pt;color:#000;line-height:1.36;text-align:justify}
 
 /* experience */
-.job{margin-bottom:7px}
+.job{margin-bottom:4px}
 .job:last-child{margin-bottom:0}
 .job .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:1px}
 .job h4{font-family:var(--disp);font-weight:700;font-size:11pt;color:var(--ink)}
 .job .date{font-family:var(--mono);font-size:9pt;font-weight:700;color:var(--accent-deep);white-space:nowrap;flex-shrink:0}
-.job .org{font-size:9.4pt;color:var(--muted);font-weight:500;margin-bottom:4px}
+.job .org{font-size:9.2pt;color:var(--muted);font-weight:500;margin-bottom:2px}
 .job ul{list-style:none}
-.job li{position:relative;padding-left:14px;font-size:9.5pt;color:#000;line-height:1.42;margin-bottom:2px;text-align:justify}
+.job li{position:relative;padding-left:14px;font-size:9.3pt;color:#000;line-height:1.36;margin-bottom:1px;text-align:justify}
 .job li::before{content:"";position:absolute;left:0;top:6.5px;width:5px;height:5px;background:var(--accent);transform:rotate(45deg)}
 
 /* education */
-.edu{margin-bottom:7px}
+.edu{margin-bottom:5px}
 .edu .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .edu h4{font-family:var(--disp);font-weight:700;font-size:11pt}
 .edu .date{font-family:var(--mono);font-size:9pt;font-weight:700;color:var(--accent-deep);white-space:nowrap}
-.edu .org{font-size:9.4pt;color:var(--muted);margin-bottom:5px}
-.grades{display:flex;flex-wrap:wrap;gap:5px 7px;margin-top:5px}
+.edu .org{font-size:9.4pt;color:var(--muted);margin-bottom:3px}
+.grades{display:flex;flex-wrap:wrap;gap:4px 6px;margin-top:3px}
 .grade-chip{font-family:var(--mono);font-size:8.6pt;border:1px solid var(--line);padding:2.5px 7px;color:#000}
 .grade-chip b{color:var(--accent-deep)}
-.edu p{font-size:9.5pt;color:#000;margin-top:3px;text-align:justify}
+.edu p{font-size:9.4pt;color:#000;margin-top:2px;text-align:justify}
 .edu p .lab{font-weight:600;color:var(--ink)}
 
 /* meta */
 .meta{display:grid;grid-template-columns:1fr 1fr;gap:6px 26px;font-size:9.4pt;color:#000}
 .meta .k{font-family:var(--mono);font-size:8.4pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--accent-deep);display:block;margin-bottom:2px}
 
-.foot{margin-top:14px;padding-top:8px;border-top:1px solid var(--line);font-family:var(--mono);font-size:8pt;color:var(--faint);text-align:center}
+.foot{margin-top:6px;padding-top:5px;border-top:1px solid var(--line);font-family:var(--mono);font-size:8pt;color:var(--faint);text-align:center}
 
 @media print{
   body{background:#fff}
@@ -118,14 +118,14 @@ p.lead{font-size:10pt;color:#000;line-height:1.46;text-align:justify}
   <div class="pad">
     <div class="sec">
       <div class="sec-l">Profile</div>
-      <p class="lead">Mechanical engineer working at the intersection of robotics, automation and intelligent manufacturing, where mechanical design meets control, sensing and autonomy: building things that move, sense and think.</p>
-      <p class="lead" style="margin-top:7px">Currently leading a 30-person team building a programmable Mars rover, with funding secured to start a LiDAR navigation robot. Wrote an RRT path planner for a nonholonomic robot, modelled ECU-based ABS control in Simulink, and turned solid-mechanics theory into a validated MATLAB tool that scored 100%. Committed to designs that survive contact with reality, built, tested, refined, and documented when they break.</p>
+      <p class="lead">Mechanical engineering student on a placement year at Harwin as a Software Engineering Intern, working at the intersection of robotics, automation and intelligent manufacturing: building things that move, sense and think.</p>
+      <p class="lead" style="margin-top:7px">On placement, I troubleshoot and optimise production robots through Keyence camera, PLC and HMI adjustments. Previously led a 30-person team building a programmable Mars rover, with funding secured to start a LiDAR navigation robot. Wrote an RRT path planner for a nonholonomic robot, modelled ECU-based ABS control in Simulink, and turned solid-mechanics theory into a validated MATLAB tool that scored 100%. Committed to designs that survive contact with reality, built, tested, refined, and documented when they break.</p>
     </div>
 
     <div class="sec">
       <div class="sec-l">Core skills</div>
       <div class="skills">
-        <div class="sk"><span class="k">Robotics &amp; Automation</span><span class="v">Path planning (RRT / Dubins), autonomous mobile robots, control systems, Industry 4.0</span></div>
+        <div class="sk"><span class="k">Robotics &amp; Automation</span><span class="v">Robot troubleshooting, PLC programming, HMI, Keyence vision, path planning (RRT / Dubins), Industry 4.0</span></div>
         <div class="sk"><span class="k">Mechanical Design</span><span class="v">PTC Creo, Fusion 360, AutoCAD, Onshape, Geometric Dimensioning &amp; Tolerancing, DFM</span></div>
         <div class="sk"><span class="k">Simulation &amp; Analysis</span><span class="v">MATLAB, Simulink, FEA, mould-flow analysis, SFD / BMD</span></div>
         <div class="sk"><span class="k">Manufacturing</span><span class="v">3D printing (FDM), injection moulding &amp; tooling, CAM / CNC, laser cutting</span></div>
@@ -178,13 +178,22 @@ p.lead{font-size:10pt;color:#000;line-height:1.46;text-align:justify}
       <div class="sec-l">Experience</div>
 
       <div class="job">
-        <div class="top"><h4>Manufacturing Club Lead</h4><span class="date">2025 – Present</span></div>
+        <div class="top"><h4>Software Engineer Intern, Production Support</h4><span class="date">2026 – Present</span></div>
+        <div class="org">Harwin, Portsmouth, UK · Placement year</div>
+        <ul>
+          <li>Troubleshoot and optimise the robots supporting production of Harwin products, within the production support team.</li>
+          <li>Adjust Keyence camera settings, modify PLC code and make HMI adjustments to resolve faults and improve robot performance.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="top"><h4>Manufacturing Club Lead</h4><span class="date">Sep 2025 – Jul 2026</span></div>
         <div class="org">University of Portsmouth, UK</div>
         <ul>
-          <li>Lead a 30-member multidisciplinary team designing and manufacturing a programmable Mars rover replica, directing mechanical design, fabrication and electrical integration.</li>
-          <li>Manage a 6-member sub-team developing an autonomous mobile robot, overseeing LiDAR and Raspberry Pi integration for object detection and navigation.</li>
-          <li>Secured university funding and institutional clearance for the robot; procure components with suppliers and lecturers within budget and to specification.</li>
-          <li>Deliver Creo and 3D-printing workshops and advise the team on load-bearing components, manufacturability and system integration.</li>
+          <li>Led a 30-member multidisciplinary team designing and manufacturing a programmable Mars rover replica, directing mechanical design, fabrication and electrical integration.</li>
+          <li>Managed a 6-member sub-team developing an autonomous mobile robot, overseeing LiDAR and Raspberry Pi integration for object detection and navigation.</li>
+          <li>Secured university funding and institutional clearance for the robot; procured components within budget and to specification.</li>
+          <li>Delivered Creo and 3D-printing workshops and advised the team on load-bearing components, manufacturability and system integration.</li>
         </ul>
       </div>
 
