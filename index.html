@@ -17,7 +17,7 @@
 <style>
 :root{
   --bg:#1B1C21; --surface:#25262C; --ink:#FAF9F5; --text2:#E4E2DA;
-  --cobalt:#D65F54; --cobalt-deep:#9A3730; --line:#3C3D45; --muted:#B6B4AB;
+  --cobalt:#B794F6; --cobalt-deep:#7C3AED; --line:#3C3D45; --muted:#B6B4AB;
   --mono:'JetBrains Mono',ui-monospace,monospace;
   --disp:'Space Grotesk',sans-serif;
   --body:'Inter',system-ui,sans-serif;
@@ -83,7 +83,7 @@ h1.name{font-family:var(--disp);font-weight:700;font-size:clamp(46px,9.5vw,92px)
 @media(max-width:560px){.skills{grid-template-columns:1fr}}
 .skill-h{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:0.3px;color:var(--cobalt);margin-bottom:10px;display:flex;align-items:center;gap:6px}
 .tags{display:flex;flex-wrap:wrap;gap:8px}
-.tag{font-family:var(--mono);font-size:12px;padding:4px 10px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink)}
+.tag{font-family:var(--mono);font-size:12px;padding:4px 10px;border:1.5px solid var(--line);background:var(--surface);color:#fff;font-weight:600}
 .meta-row{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:22px;border-top:1.5px solid var(--line);padding-top:18px;font-size:13px;color:var(--text2)}
 .meta-row .k{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:0.3px;color:var(--cobalt);display:block;margin-bottom:3px}
 
@@ -102,7 +102,7 @@ h1.name{font-family:var(--disp);font-weight:700;font-size:clamp(46px,9.5vw,92px)
 .tl-item.now .tl-role{font-size:23px}
 .tl-item.now .tl-org{font-size:14.5px}
 .tl-item.now .tl-bullets li{font-size:16px}
-.tl-item.now .tl-badge{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
+.tl-item.now .tl-badge{background:var(--cobalt-deep);color:#fff;border-color:var(--cobalt-deep)}
 .tl-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin-bottom:6px}
 .tl-date{font-family:var(--mono);font-size:15px;font-weight:700;color:var(--cobalt)}
 .tl-badge{font-family:var(--mono);font-size:11px;letter-spacing:0.3px;border:1.5px solid var(--line);padding:2px 8px;color:var(--text2)}
@@ -151,7 +151,7 @@ h1.name{font-family:var(--disp);font-weight:700;font-size:clamp(46px,9.5vw,92px)
 .stack{border:1.5px solid var(--line);background:var(--bg);padding:16px;margin-bottom:22px}
 .tool-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:2px 18px}
 @media(max-width:520px){.tool-list{grid-template-columns:1fr}}
-.tool-list li{font-family:var(--mono);font-size:13px;padding:6px 0;border-bottom:1px solid var(--line);display:flex;gap:8px;align-items:flex-start;color:var(--text2)}
+.tool-list li{font-family:var(--mono);font-size:13px;padding:6px 0;border-bottom:1px solid var(--line);display:flex;gap:8px;align-items:flex-start;color:#fff;font-weight:600}
 .tool-list li::before{content:"›";color:var(--cobalt);font-weight:700}
 .steps{display:flex;flex-direction:column;gap:14px}
 .step{display:flex;gap:12px;font-size:15px;color:var(--text2);line-height:1.55}
@@ -187,7 +187,7 @@ footer{border-top:1.5px solid var(--line);margin-top:48px;padding:26px 0;font-fa
 .tree-root i{color:var(--cobalt);width:18px;height:18px}
 .tree-trunk{width:2px;height:26px;background:var(--cobalt);margin:0 auto}
 .tree-body{position:relative;background-image:radial-gradient(circle,rgba(214,95,84,0.32) 1.3px,transparent 1.7px);background-size:22px 22px}
-.tree-body::before{content:"";position:absolute;left:50%;top:0;bottom:6px;width:34px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='54' viewBox='0 0 34 54'%3E%3Cpath d='M17 0 L31 13 L4 27 L30 40 L17 54' fill='none' stroke='%23D65F54' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:repeat-y;background-position:center top;transform:translateX(-50%)}
+.tree-body::before{content:"";position:absolute;left:50%;top:0;bottom:6px;width:34px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='54' viewBox='0 0 34 54'%3E%3Cpath d='M17 0 L31 13 L4 27 L30 40 L17 54' fill='none' stroke='%23B794F6' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:repeat-y;background-position:center top;transform:translateX(-50%)}
 .tree-node{position:relative;width:calc(50% - 34px);margin-bottom:26px}
 .tree-node.right{margin-left:auto}
 .tree-node::before{content:"";position:absolute;top:26px;width:34px;height:2px;background:var(--cobalt)}
@@ -215,7 +215,7 @@ footer{border-top:1.5px solid var(--line);margin-top:48px;padding:26px 0;font-fa
 .skilltree svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .leaf{position:absolute;max-width:238px;z-index:2;background:rgba(27,28,33,0.9);border:1px solid var(--line);border-radius:8px;padding:10px 13px}
 .leaf-h{font-family:var(--disp);font-weight:700;font-size:17px;color:var(--ink);margin-bottom:5px}
-.leaf-tags{font-size:13px;line-height:1.55;color:var(--text2)}
+.leaf-tags{font-size:13px;line-height:1.55;color:#fff;font-weight:500}
 .leaf.l{text-align:right}
 .skill-list{display:none}
 @media(max-width:760px){
@@ -296,18 +296,18 @@ a:focus-visible,button:focus-visible,.card:focus-visible{outline:2px solid var(-
     <p class="sec-intro">Skills mapped as a tree: a robotics-rooted trunk branching into my engineering disciplines, weighted toward robotics, automation and electromechanical systems.</p>
     <div class="skilltree">
       <svg viewBox="0 0 800 760" preserveAspectRatio="xMidYMid meet" role="img" aria-label="A bare tree whose branches lead to each engineering discipline." xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" stroke="#9A3730" stroke-width="1.4" stroke-linecap="round">
+        <g fill="none" stroke="#7C3AED" stroke-width="1.4" stroke-linecap="round">
           <ellipse cx="400" cy="706" rx="64" ry="11"/>
           <ellipse cx="400" cy="706" rx="34" ry="6"/>
           <path d="M300 706 C262 703 232 706 208 710"/>
           <path d="M500 706 C538 703 568 706 592 710"/>
         </g>
-        <g fill="none" stroke="#C24A42" stroke-width="2.4" stroke-linecap="round">
+        <g fill="none" stroke="#9D5CE0" stroke-width="2.4" stroke-linecap="round">
           <path d="M393 702 C398 600 396 490 399 410 C400 388 399 372 400 360"/>
           <path d="M407 702 C403 600 405 490 402 410 C401 388 402 372 400 360"/>
           <path d="M400 700 C401 620 400 510 400 430"/>
         </g>
-        <g fill="none" stroke="#D65F54" stroke-width="1.7" stroke-linecap="round">
+        <g fill="none" stroke="#B794F6" stroke-width="1.7" stroke-linecap="round">
           <path d="M400 360 C374 322 348 250 318 156"/>
           <path d="M356 248 C336 240 322 248 306 240"/>
           <path d="M340 200 C356 196 366 204 380 198"/>
@@ -326,7 +326,7 @@ a:focus-visible,button:focus-visible,.card:focus-visible{outline:2px solid var(-
           <path d="M360 300 C346 294 338 302 328 296"/>
           <path d="M440 300 C454 294 462 302 472 296"/>
         </g>
-        <g fill="#D65F54">
+        <g fill="#B794F6">
           <circle cx="318" cy="156" r="4.5"/><circle cx="500" cy="170" r="4.5"/><circle cx="180" cy="332" r="4.5"/>
           <circle cx="626" cy="350" r="4.5"/><circle cx="230" cy="505" r="4.5"/><circle cx="598" cy="520" r="4.5"/>
         </g>
