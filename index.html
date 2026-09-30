@@ -94,13 +94,13 @@ h1.name{font-family:var(--disp);font-weight:700;font-size:clamp(46px,9.5vw,92px)
 .tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--line)}
 .tl-item{position:relative;margin-bottom:22px}
 .tl-item:last-child{margin-bottom:0}
-.tl-group{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--cobalt);margin:0 0 18px -28px;padding-bottom:7px;border-bottom:1.5px solid var(--line)}
+.tl-group{display:inline-block;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#fff;background:var(--cobalt-deep);border:1.5px solid var(--cobalt);padding:6px 14px;margin:0 0 20px -28px}
 .tl-group.edu{margin-top:38px}
 .tl-item::before{content:"";position:absolute;left:-28px;top:5px;width:12px;height:12px;background:var(--cobalt);border:2px solid var(--bg)}
 .tl-card{border:1.5px solid var(--line);background:var(--surface);box-shadow:4px 4px 0 var(--cobalt-deep);padding:16px 18px;transition:transform .12s,box-shadow .12s}
 .tl-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--cobalt)}
-.tl-item.now::before{width:17px;height:17px;top:2px;box-shadow:0 0 0 4px rgba(214,95,84,0.25)}
-.tl-item.now .tl-card{border:2px solid var(--cobalt);background:rgba(214,95,84,0.10);box-shadow:6px 6px 0 var(--cobalt);padding:22px 24px}
+.tl-item.now::before{width:17px;height:17px;top:2px;box-shadow:0 0 0 4px rgba(124,58,237,0.3)}
+.tl-item.now .tl-card{border:2px solid var(--cobalt);background:rgba(124,58,237,0.12);box-shadow:6px 6px 0 var(--cobalt);padding:22px 24px}
 .tl-item.now .tl-role{font-size:23px}
 .tl-item.now .tl-org{font-size:14.5px}
 .tl-item.now .tl-bullets li{font-size:16px}
@@ -114,6 +114,16 @@ h1.name{font-family:var(--disp);font-weight:700;font-size:clamp(46px,9.5vw,92px)
 .tl-bullets li{position:relative;padding-left:18px;font-size:15.5px;color:var(--text2);margin-bottom:7px;line-height:1.55}
 .tl-bullets li:last-child{margin-bottom:0}
 .tl-bullets li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;background:var(--cobalt)}
+.tl-head{display:flex;align-items:flex-start;gap:12px}
+.tl-icon{width:38px;height:38px;flex-shrink:0;border:1.5px solid var(--cobalt);background:rgba(183,148,246,0.1);display:flex;align-items:center;justify-content:center;color:var(--cobalt)}
+.tl-icon svg{width:18px;height:18px}
+.tl-item.now .tl-icon{width:46px;height:46px;border-width:2px}
+.tl-item.now .tl-icon svg{width:22px;height:22px}
+.tl-body{flex:1;min-width:0}
+.tl-item{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.tl-item.in-view{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.tl-item{opacity:1;transform:none;transition:none}}
+
 
 /* projects */
 .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
@@ -188,7 +198,7 @@ footer{border-top:1.5px solid var(--line);margin-top:48px;padding:26px 0;font-fa
 .tree-root{width:max-content;max-width:100%;margin:0 auto;padding:12px 22px;border:2px solid var(--cobalt);background:var(--surface);font-family:var(--disp);font-weight:700;font-size:16px;color:var(--ink);display:flex;align-items:center;gap:9px;justify-content:center;text-align:center}
 .tree-root i{color:var(--cobalt);width:18px;height:18px}
 .tree-trunk{width:2px;height:26px;background:var(--cobalt);margin:0 auto}
-.tree-body{position:relative;background-image:radial-gradient(circle,rgba(214,95,84,0.32) 1.3px,transparent 1.7px);background-size:22px 22px}
+.tree-body{position:relative;background-image:radial-gradient(circle,rgba(183,148,246,0.32) 1.3px,transparent 1.7px);background-size:22px 22px}
 .tree-body::before{content:"";position:absolute;left:50%;top:0;bottom:6px;width:34px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='54' viewBox='0 0 34 54'%3E%3Cpath d='M17 0 L31 13 L4 27 L30 40 L17 54' fill='none' stroke='%23B794F6' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:repeat-y;background-position:center top;transform:translateX(-50%)}
 .tree-node{position:relative;width:calc(50% - 34px);margin-bottom:26px}
 .tree-node.right{margin-left:auto}
@@ -381,9 +391,9 @@ a:focus-visible,button:focus-visible,.card:focus-visible{outline:2px solid var(-
     <div class="tl">
       <div class="tl-group">Work</div>
       <div class="tl-item now"><div class="tl-card">
-        <div class="tl-top"><span class="tl-date">Sep 2026 – Present</span><span class="tl-badge">Placement year</span></div>
+        <div class="tl-head"><div class="tl-icon"><i data-lucide="bot"></i></div><div class="tl-body"><div class="tl-top"><span class="tl-date">Sep 2026 – Present</span><span class="tl-badge">Placement year</span></div>
         <h3 class="tl-role">Software Engineer Intern, Production Support</h3>
-        <div class="tl-org">Harwin · Portsmouth, UK</div>
+        <div class="tl-org">Harwin · Portsmouth, UK</div></div></div>
         <ul class="tl-bullets">
           <li>Troubleshoot and optimise the robots that support production of Harwin products, as part of the production support team.</li>
           <li>Adjust Keyence camera settings on the robots supporting production.</li>
@@ -391,18 +401,18 @@ a:focus-visible,button:focus-visible,.card:focus-visible{outline:2px solid var(-
         </ul>
       </div></div>
       <div class="tl-item"><div class="tl-card">
-        <div class="tl-top"><span class="tl-date">Sep 2025 – Jul 2026</span><span class="tl-badge">Club leadership</span></div>
+        <div class="tl-head"><div class="tl-icon"><i data-lucide="users"></i></div><div class="tl-body"><div class="tl-top"><span class="tl-date">Sep 2025 – Jul 2026</span><span class="tl-badge">Club leadership</span></div>
         <h3 class="tl-role">Manufacturing Club Lead</h3>
-        <div class="tl-org">University of Portsmouth, UK</div>
+        <div class="tl-org">University of Portsmouth, UK</div></div></div>
         <ul class="tl-bullets">
           <li>Led a 30-member, multidisciplinary team building a programmable Mars rover replica across mechanical, electrical and integration workstreams.</li>
           <li>Ran Creo and Bambu Studio onboarding and load-tested 3D-printed parts before committing to final builds, reducing print failures.</li>
         </ul>
       </div></div>
       <div class="tl-item"><div class="tl-card">
-        <div class="tl-top"><span class="tl-date">Aug – Sep 2025</span><span class="tl-badge">Internship</span></div>
+        <div class="tl-head"><div class="tl-icon"><i data-lucide="factory"></i></div><div class="tl-body"><div class="tl-top"><span class="tl-date">Aug – Sep 2025</span><span class="tl-badge">Internship</span></div>
         <h3 class="tl-role">IT Industrialisation Intern</h3>
-        <div class="tl-org">Philip Morris International · Lausanne, Switzerland</div>
+        <div class="tl-org">Philip Morris International · Lausanne, Switzerland</div></div></div>
         <ul class="tl-bullets">
           <li>Worked in the department responsible for launching factories and digitally integrating production systems.</li>
           <li>Documented the end-to-end G0–G7 project lifecycle in a reusable "Ways of Working" playbook.</li>
@@ -410,27 +420,27 @@ a:focus-visible,button:focus-visible,.card:focus-visible{outline:2px solid var(-
         </ul>
       </div></div>
       <div class="tl-item"><div class="tl-card">
-        <div class="tl-top"><span class="tl-date">Jul – Aug 2025</span><span class="tl-badge">Internship</span></div>
+        <div class="tl-head"><div class="tl-icon"><i data-lucide="database"></i></div><div class="tl-body"><div class="tl-top"><span class="tl-date">Jul – Aug 2025</span><span class="tl-badge">Internship</span></div>
         <h3 class="tl-role">Data Quality &amp; Integration Intern</h3>
-        <div class="tl-org">Haut-Lac International Bilingual School · Saint-Légier, Switzerland</div>
+        <div class="tl-org">Haut-Lac International Bilingual School · Saint-Légier, Switzerland</div></div></div>
         <ul class="tl-bullets">
           <li>Reconciled and validated data across two systems (HubSpot CRM and Engage) against source records.</li>
           <li>Ran audits and system tests to identify and resolve inconsistencies and redundancies.</li>
         </ul>
       </div></div>
       <div class="tl-item"><div class="tl-card">
-        <div class="tl-top"><span class="tl-date">May – Aug 2024</span><span class="tl-badge">Internship</span></div>
+        <div class="tl-head"><div class="tl-icon"><i data-lucide="refresh-cw"></i></div><div class="tl-body"><div class="tl-top"><span class="tl-date">May – Aug 2024</span><span class="tl-badge">Internship</span></div>
         <h3 class="tl-role">IT Tech &amp; Data Migration Intern</h3>
-        <div class="tl-org">Haut-Lac International Bilingual School · Saint-Légier, Switzerland</div>
+        <div class="tl-org">Haut-Lac International Bilingual School · Saint-Légier, Switzerland</div></div></div>
         <ul class="tl-bullets">
           <li>Migrated 500+ student records between HubSpot and Engage with standardised data formats.</li>
           <li>Built report templates and secure extraction processes, trained staff, and debugged VBA macros to improve data integrity.</li>
         </ul>
       </div></div>
       <div class="tl-item"><div class="tl-card">
-        <div class="tl-top"><span class="tl-date">May – Jun 2022</span><span class="tl-badge">Internship</span></div>
+        <div class="tl-head"><div class="tl-icon"><i data-lucide="hammer"></i></div><div class="tl-body"><div class="tl-top"><span class="tl-date">May – Jun 2022</span><span class="tl-badge">Internship</span></div>
         <h3 class="tl-role">Sheet Metal Worker Intern</h3>
-        <div class="tl-org">Car-Point Carrosseries SA, Switzerland</div>
+        <div class="tl-org">Car-Point Carrosseries SA, Switzerland</div></div></div>
         <ul class="tl-bullets">
           <li>Assisted vehicle body repair: dent correction, panel replacement and post-repair alignment.</li>
           <li>Worked to industry-standard methods and workshop safety, with zero additional damage during handling.</li>
@@ -438,9 +448,9 @@ a:focus-visible,button:focus-visible,.card:focus-visible{outline:2px solid var(-
       </div></div>
       <div class="tl-group edu">Education</div>
       <div class="tl-item now"><div class="tl-card">
-        <div class="tl-top"><span class="tl-date">2024 – 2028</span><span class="tl-badge">Ongoing · On track for a 1st · IMechE</span></div>
+        <div class="tl-head"><div class="tl-icon"><i data-lucide="graduation-cap"></i></div><div class="tl-body"><div class="tl-top"><span class="tl-date">2024 – 2028</span><span class="tl-badge">Ongoing · On track for a 1st · IMechE</span></div>
         <h3 class="tl-role">BEng (Hons) Mechanical Engineering</h3>
-        <div class="tl-org">University of Portsmouth, UK</div>
+        <div class="tl-org">University of Portsmouth, UK</div></div></div>
         <ul class="tl-bullets">
           <li>On-track first-class classification on an IMechE-accredited degree.</li>
           <li><b>Year 2 (average 79%):</b> Engineering Mathematics &amp; Numerical Analysis 97%, Robotics &amp; Automation 84%, Engineering Design 82%, Solid Mechanics &amp; Dynamics 74%, Thermodynamics &amp; Fluid Mechanics 70%, Computer-Aided Engineering &amp; Product Manufacture 68%.</li>
@@ -448,9 +458,9 @@ a:focus-visible,button:focus-visible,.card:focus-visible{outline:2px solid var(-
         </ul>
       </div></div>
       <div class="tl-item"><div class="tl-card">
-        <div class="tl-top"><span class="tl-date">2017 – 2024</span><span class="tl-badge">Education</span></div>
+        <div class="tl-head"><div class="tl-icon"><i data-lucide="book-open"></i></div><div class="tl-body"><div class="tl-top"><span class="tl-date">2017 – 2024</span><span class="tl-badge">Education</span></div>
         <h3 class="tl-role">IB Diploma</h3>
-        <div class="tl-org">Haut-Lac International Bilingual School, Switzerland</div>
+        <div class="tl-org">Haut-Lac International Bilingual School, Switzerland</div></div></div>
         <ul class="tl-bullets">
           <li>Higher Level: Mathematics Analysis &amp; Approaches, Physics, Business Management.</li>
           <li>Standard Level: Computer Science, English Language &amp; Literature, French B.</li>
@@ -601,6 +611,19 @@ document.addEventListener('keydown',e=>{
   else if(e.key==='ArrowLeft'&&carLen>1)carGo(-1);
 });
 if(window.lucide)lucide.createIcons();
+
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const tlItems=document.querySelectorAll('.tl-item');
+if(reduceMotion||!('IntersectionObserver' in window)){
+  tlItems.forEach(el=>el.classList.add('in-view'));
+}else{
+  const tlObserver=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add('in-view');tlObserver.unobserve(entry.target);}
+    });
+  },{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
+  tlItems.forEach(el=>tlObserver.observe(el));
+}
 
 </script>
 </body>
